@@ -82,6 +82,8 @@ button:focus-visible {
   --color-black-900: #3d3d3d;
   --color-black-950: #000000;
   --color-blorange: #f34213;
+
+  --font-main: "Roboto Mono", monospace;
 }
 
 @utility scrollbar-hidden {

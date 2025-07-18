@@ -3,8 +3,11 @@ import { useState } from "react";
 function App() {
   const [isSideNavOpen, setIsSideNavOpen] = useState(false);
   const [activeSideNav, setActiveSideNav] = useState('0');
+  const [activeProjectList, setActiveProjectList] = useState('0');
 
-  const sideNavItems = ['index', 'projects', 'contact']
+  const sideNavItems = ['index', 'projects', 'contact'];
+  const projectListItems = ['atelier', 'SDC', 'duguid', 'codeAndTell'];
+  const projectBlurbs = ['mock e-commerce site', 'database revamp for mock e-commerce site', 'doooo goooood', 'coding and telling']
 
   const sideNavDivStyle = `
     flex flex-row place-items-center w-full gap-x-3 px-1 rounded-[2px] text-center text-[10px] bg-black-900
@@ -14,7 +17,8 @@ function App() {
     inline-block text-white text-xs px-3 bg-black-900
     hover:text-black-950 hover:bg-white hover:cursor-pointer
   `;
-  const mainSectionStyle = `w-full bg-black-900 rounded-lg grid grid-cols-4 grid-rows-4 gap-8 px-18 py-18`
+  const mainSectionStyle = `w-full bg-black-900 rounded-lg grid grid-cols-8 grid-rows-4 gap-8 px-18 py-18`;
+  const projectListStyle = `flex flex-col w-full gap-y-1 font-main`;
   const gridStyle = `bg-black-800 w-full h-24`;
 
   const testBorder = 'border-[0.5px] border-solid border-red-500';
@@ -37,14 +41,36 @@ function App() {
 
         <div className={`w-full h-full flex flex-col gap-y-[12px] overflow-y-scroll scrollbar-hidden`}>
             <div className={mainSectionStyle}>
+              <div className={`col-span-2 row-span-2 font-main text-xl`}>
+                welcome to my portfolio. <br></br>
+                welcome to my portfolio. <br></br>
+                welcome to my portfolio. <br></br>
+                welcome to my portfolio. <br></br>
+                welcome to my portfolio. <br></br>
+                welcome to my portfolio. <br></br>
+                welcome to my portfolio. <br></br>
+                welcome to my portfolio. <br></br>
+              </div>
+              <div className={gridStyle}></div>
+              <div className={gridStyle}></div>
+              <div className={`bg-blorange col-span-4 row-span-3`}>image carousel self scrolling</div>
               <div className={gridStyle}></div>
               <div className={gridStyle}></div>
               <div className={gridStyle}></div>
               <div className={gridStyle}></div>
-              <div className={`bg-blorange col-span-2 row-span-2`}>image carousel self scrolling</div>
               <div className={gridStyle}></div>
-              <div className={gridStyle}></div>
-              <div className={gridStyle}></div>
+              <div className={`flex flex-col gap-y-3`}>
+                { projectListItems.map((nav, key) =>
+                  <div
+                    key={key}
+                    className={`${projectListStyle} ${ key.toString() === activeProjectList ? '' : 'hidden' }`}
+                    onClick={ () => { setActiveProjectList(key.toString()) } }
+                  >
+                    <p className="font-bold text-md">{nav}</p>
+                    <p className="text-xs">{projectBlurbs[key]}</p>
+                  </div>
+                )}
+              </div>
               <div className={gridStyle}></div>
               <div className={gridStyle}></div>
               <div className={gridStyle}></div>
@@ -105,18 +131,17 @@ function App() {
         </div> */}
 
       { /* SIDE NAV */ }
-      <div
-        onMouseEnter={() => { setIsSideNavOpen(true) }}
-        onMouseLeave={() => { setIsSideNavOpen(false) }}
-        className={`flex flex-col absolute max-w-fit top-[45%] left-[12px]`}
-      >
-        <img className="h-[20px]" src="../public/rounded_inner_corner.svg" width={20} alt=""></img>
+      <div id="side-nav-container" className="absolute top-[45%] left-[12px] flex flex-col">
+        <img id="corner-top" className="h-[20px]" src="../public/rounded_inner_corner.svg" width={20} alt=""></img>
         <div
+          onMouseEnter={() => { setIsSideNavOpen(true) }}
+          onMouseLeave={() => { setIsSideNavOpen(false) }}
           className={`
-          bg-black-950 rounded-r-md p-3 hover:min-w-fit w-3 hover:w-auto
+            flex justify-center w-3 p-3 bg-black-950 rounded-r-md
+            hover:w-auto hover:min-w-fit
           `}
         >
-          <ul className={`flex flex-col gap-y-[1px]`}>
+          <div className={`flex flex-col gap-y-[3px]`}>
             { sideNavItems.map((nav, key) =>
               <div
                 key={key}
@@ -124,12 +149,12 @@ function App() {
                 onClick={ () => { setActiveSideNav(key.toString()) } }
               >
                 {circle}
-                <li className={`${ isSideNavOpen ? '' : 'hidden' }`}>{nav}</li>
+                <p className={`${ isSideNavOpen ? '' : 'hidden' }`}>{nav}</p>
               </div>
             )}
-          </ul>
+          </div>
         </div>
-        <img className="scale-y-[-1] h-[20px]" src="../public/rounded_inner_corner.svg" width={20} alt=""></img>
+        <img id="corner-bottom" className="scale-y-[-1] h-[20px]" src="../public/rounded_inner_corner.svg" width={20} alt=""></img>
       </div>
     </>
   )
