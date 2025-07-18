@@ -4,12 +4,12 @@ function App() {
   const [isSideNavOpen, setIsSideNavOpen] = useState(false);
   const [activeSideNav, setActiveSideNav] = useState(0);
   const [activeProjectList, setActiveProjectList] = useState(0);
-  const [activeList, setActiveList] = useState(0);
+  const [activePhotoList, setActivePhotoList] = useState(0);
 
   const sideNavItems = ['index', 'projects', 'contact'];
-  const projectListItems = ['atelier', 'SDC', 'duguid', 'codeAndTell'];
-  const projectBlurbs = ['mock e-commerce site', 'database revamp for mock e-commerce site', 'doooo goooood', 'coding and telling'];
-  const list = ['hello', 'bald', 'huh'];
+  const projectListItems = ['portfolio v.1', 'codeAndTell', 'atelier', 'duguid construction'];
+  const projectBlurbs = ['database revamp for mock e-commerce site', 'doooo goooood', 'mock e-commerce site'];
+  const photoList = ['public/portfolio-v1.png', 'public/codeAndTell.png', 'public/royalepage.gif', 'public/duguid.gif'];
 
   const testBorder = 'border-[0.5px] border-solid border-red-500';
 
@@ -29,10 +29,10 @@ function App() {
 
   useEffect(() => {
     function cycleCarousel () {
-      if (activeList < list.length - 1) {
-        setActiveList(activeList + 1)
+      if (activePhotoList < photoList.length - 1) {
+        setActivePhotoList(activePhotoList + 1)
       } else {
-        setActiveList(0);
+        setActivePhotoList(0);
       }
     }
 
@@ -69,12 +69,12 @@ function App() {
               <div className={gridStyle}></div>
               <div className={gridStyle}></div>
               <div className={`bg-blorange col-span-4 row-span-3`}>
-                { list.map((item, key) =>
+                { photoList.map((photo, key) =>
                   <div
                     key={key}
-                    className={`${projectItemStyle} ${ key === activeList ? '' : 'hidden' }`}
+                    className={`${projectItemStyle} ${ key === activePhotoList ? '' : 'hidden' }`}
                   >
-                    <p className="font-bold text-3xl text-center">{item}</p>
+                    <img className={`w-full h-full overflow-hidden`} src={photo}></img>
                   </div>
                 )}
               </div>
@@ -83,7 +83,7 @@ function App() {
                 { projectListItems.map((nav, key) =>
                   <div
                     key={key}
-                    className={`${projectItemStyle} ${ key === activeProjectList ? '' : 'hidden' }`}
+                    className={`${projectItemStyle} ${ key === activePhotoList ? '' : 'hidden' }`}
                   >
                     <p className="font-bold text-md">{nav}</p>
                     <p className={`text-xs`}>{projectBlurbs[key]}</p>
