@@ -1,13 +1,17 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 function App() {
   const [isSideNavOpen, setIsSideNavOpen] = useState(false);
-  const [activeSideNav, setActiveSideNav] = useState('0');
-  const [activeProjectList, setActiveProjectList] = useState('0');
+  const [activeSideNav, setActiveSideNav] = useState(0);
+  const [activeProjectList, setActiveProjectList] = useState(0);
+  const [activeList, setActiveList] = useState(0);
 
   const sideNavItems = ['index', 'projects', 'contact'];
   const projectListItems = ['atelier', 'SDC', 'duguid', 'codeAndTell'];
-  const projectBlurbs = ['mock e-commerce site', 'database revamp for mock e-commerce site', 'doooo goooood', 'coding and telling']
+  const projectBlurbs = ['mock e-commerce site', 'database revamp for mock e-commerce site', 'doooo goooood', 'coding and telling'];
+  const list = ['hello', 'bald', 'huh'];
+
+  const testBorder = 'border-[0.5px] border-solid border-red-500';
 
   const sideNavDivStyle = `
     flex flex-row place-items-center w-full gap-x-3 px-1 rounded-[2px] text-center text-[10px] bg-black-900
@@ -17,12 +21,23 @@ function App() {
     inline-block text-white text-xs px-3 bg-black-900
     hover:text-black-950 hover:bg-white hover:cursor-pointer
   `;
-  const mainSectionStyle = `w-full bg-black-900 rounded-lg grid grid-cols-8 grid-rows-4 gap-8 px-18 py-18`;
-  const projectListStyle = `flex flex-col w-full gap-y-1 font-main`;
+  const mainSectionStyle = `w-full min-h-full bg-black-900 rounded-lg grid grid-cols-8 grid-rows-4 gap-8 px-18 py-18`;
+  const projectItemStyle = `flex flex-col w-full h-full gap-y-1 font-main`;
   const gridStyle = `bg-black-800 w-full h-24`;
 
-  const testBorder = 'border-[0.5px] border-solid border-red-500';
   const circle = <div className={``}>{']'}</div>;
+
+  useEffect(() => {
+    function cycleCarousel () {
+      if (activeList < list.length - 1) {
+        setActiveList(activeList + 1)
+      } else {
+        setActiveList(0);
+      }
+    }
+
+    setTimeout(cycleCarousel, 2000)
+  })
 
   return (
     <>
@@ -53,24 +68,32 @@ function App() {
               </div>
               <div className={gridStyle}></div>
               <div className={gridStyle}></div>
-              <div className={`bg-blorange col-span-4 row-span-3`}>image carousel self scrolling</div>
-              <div className={gridStyle}></div>
-              <div className={gridStyle}></div>
-              <div className={gridStyle}></div>
-              <div className={gridStyle}></div>
-              <div className={gridStyle}></div>
-              <div className={`flex flex-col gap-y-3`}>
-                { projectListItems.map((nav, key) =>
+              <div className={`bg-blorange col-span-4 row-span-3`}>
+                { list.map((item, key) =>
                   <div
                     key={key}
-                    className={`${projectListStyle} ${ key.toString() === activeProjectList ? '' : 'hidden' }`}
-                    onClick={ () => { setActiveProjectList(key.toString()) } }
+                    className={`${projectItemStyle} ${ key === activeList ? '' : 'hidden' }`}
                   >
-                    <p className="font-bold text-md">{nav}</p>
-                    <p className="text-xs">{projectBlurbs[key]}</p>
+                    <p className="font-bold text-3xl text-center">{item}</p>
                   </div>
                 )}
               </div>
+              <div className={gridStyle}></div>
+              <div className={`flex flex-col gap-y-3 row-span-2`}>
+                { projectListItems.map((nav, key) =>
+                  <div
+                    key={key}
+                    className={`${projectItemStyle} ${ key === activeProjectList ? '' : 'hidden' }`}
+                  >
+                    <p className="font-bold text-md">{nav}</p>
+                    <p className={`text-xs`}>{projectBlurbs[key]}</p>
+                  </div>
+                )}
+              </div>
+              <div className={gridStyle}></div>
+              <div className={gridStyle}></div>
+              <div className={gridStyle}></div>
+              <div className={gridStyle}></div>
               <div className={gridStyle}></div>
               <div className={gridStyle}></div>
               <div className={gridStyle}></div>
@@ -145,8 +168,8 @@ function App() {
             { sideNavItems.map((nav, key) =>
               <div
                 key={key}
-                className={`${sideNavDivStyle} ${ key.toString() === activeSideNav ? 'bg-white text-black-950' : '' }`}
-                onClick={ () => { setActiveSideNav(key.toString()) } }
+                className={`${sideNavDivStyle} ${ key === activeSideNav ? 'bg-white text-black-950' : '' }`}
+                onClick={ () => { setActiveSideNav(key) } }
               >
                 {circle}
                 <p className={`${ isSideNavOpen ? '' : 'hidden' }`}>{nav}</p>
