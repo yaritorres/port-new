@@ -3,12 +3,19 @@ import { useEffect, useState } from "react";
 function App() {
   const [isSideNavOpen, setIsSideNavOpen] = useState(false);
   const [activeSideNav, setActiveSideNav] = useState(0);
-  const [activeProjectList, setActiveProjectList] = useState(0);
   const [activePhotoList, setActivePhotoList] = useState(0);
 
   const sideNavItems = ['index', 'projects', 'contact'];
   const projectListItems = ['portfolio v.1', 'codeAndTell', 'atelier', 'duguid construction'];
-  const projectBlurbs = ['database revamp for mock e-commerce site', 'doooo goooood', 'mock e-commerce site'];
+  const projectBlurbs = [
+    'the first portfolio i created and deployed', 'a platform where devs can come together to easily find side projects to work on',
+    'mock e-commerce site in the early days of my bootcamp', 'final project to create a full-scale app for a mock construction company'
+  ];
+  const projectDates = ['2024', '2025', '2021', '2021'];
+  const projectTech = [
+    `[ react, next.js, vercel, tailwindCSS ]`, `[ react, vite, supabase, tailwindCSS, netlify ]`,
+    `[ react, next.js, vercel, tailwindCSS ]`, `[ react, next.js, vercel, tailwindCSS ]`
+  ]
   const photoList = ['public/portfolio-v1.png', 'public/codeAndTell.png', 'public/royalepage.gif', 'public/duguid.gif'];
 
   const testBorder = 'border-[0.5px] border-solid border-red-500';
@@ -21,7 +28,7 @@ function App() {
     inline-block text-white text-xs px-3 bg-black-900
     hover:text-black-950 hover:bg-white hover:cursor-pointer
   `;
-  const mainSectionStyle = `w-full min-h-full bg-black-900 rounded-lg grid grid-cols-8 grid-rows-4 gap-8 px-18 py-18`;
+  const mainSectionStyle = `w-full min-h-full bg-black-900 rounded-lg grid grid-cols-8 grid-rows-4 gap-4 px-18 py-18`;
   const projectItemStyle = `flex flex-col w-full h-full gap-y-1 font-main`;
   const gridStyle = `bg-black-800 w-full h-24`;
 
@@ -56,7 +63,7 @@ function App() {
 
         <div className={`w-full h-full flex flex-col gap-y-[12px] overflow-y-scroll scrollbar-hidden`}>
             <div className={mainSectionStyle}>
-              <div className={`col-span-2 row-span-2 font-main text-xl`}>
+              <div className={`col-span-2 row-span-2 font-main text-xl col-start-1`}>
                 welcome to my portfolio. <br></br>
                 welcome to my portfolio. <br></br>
                 welcome to my portfolio. <br></br>
@@ -66,20 +73,17 @@ function App() {
                 welcome to my portfolio. <br></br>
                 welcome to my portfolio. <br></br>
               </div>
-              <div className={gridStyle}></div>
-              <div className={gridStyle}></div>
-              <div className={`bg-blorange col-span-4 row-span-3`}>
+              <div className={`col-span-3 row-span-2 col-start-6 row-start-2`}>
                 { photoList.map((photo, key) =>
                   <div
                     key={key}
-                    className={`${projectItemStyle} ${ key === activePhotoList ? '' : 'hidden' }`}
+                    className={`h-full px-10 py-5 bg-black-800 ${ key === activePhotoList ? '' : 'hidden' }`}
                   >
-                    <img className={`w-full h-full overflow-hidden`} src={photo}></img>
+                    <img className={`object-cover h-full overflow-hidden`} src={photo}></img>
                   </div>
                 )}
               </div>
-              <div className={gridStyle}></div>
-              <div className={`flex flex-col gap-y-3 row-span-2`}>
+              <div className={`flex flex-col gap-y-3 col-span-2 row-span-1 col-start-4 row-start-3`}>
                 { projectListItems.map((nav, key) =>
                   <div
                     key={key}
@@ -87,18 +91,11 @@ function App() {
                   >
                     <p className="font-bold text-md">{nav}</p>
                     <p className={`text-xs`}>{projectBlurbs[key]}</p>
+                    <p className="text-[10px]">{projectTech[key]}</p>
+                    <p className="text-[8px]">{projectDates[key]}</p>
                   </div>
                 )}
               </div>
-              <div className={gridStyle}></div>
-              <div className={gridStyle}></div>
-              <div className={gridStyle}></div>
-              <div className={gridStyle}></div>
-              <div className={gridStyle}></div>
-              <div className={gridStyle}></div>
-              <div className={gridStyle}></div>
-              <div className={gridStyle}></div>
-              <div className={gridStyle}></div>
             </div>
 
             <div className={mainSectionStyle}>
