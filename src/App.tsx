@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+import Work from "./pages/Work";
+import Index from "./pages/Index";
 
 function App() {
   const [isSideNavOpen, setIsSideNavOpen] = useState(false);
@@ -62,61 +64,9 @@ function App() {
         </img>
 
         <div className={`w-full h-full flex flex-col gap-y-[12px] overflow-y-scroll scrollbar-hidden`}>
-            <div className={mainSectionStyle}>
-              <div className={`col-span-2 row-span-2 font-main text-xl col-start-1`}>
-                welcome to my portfolio. <br></br>
-                welcome to my portfolio. <br></br>
-                welcome to my portfolio. <br></br>
-                welcome to my portfolio. <br></br>
-                welcome to my portfolio. <br></br>
-                welcome to my portfolio. <br></br>
-                welcome to my portfolio. <br></br>
-                welcome to my portfolio. <br></br>
-              </div>
-              <div className={`col-span-3 row-span-2 col-start-6 row-start-2`}>
-                { photoList.map((photo, key) =>
-                  <div
-                    key={key}
-                    className={`h-full px-10 py-5 bg-black-800 ${ key === activePhotoList ? '' : 'hidden' }`}
-                  >
-                    <img className={`object-cover h-full overflow-hidden`} src={photo}></img>
-                  </div>
-                )}
-              </div>
-              <div className={`flex flex-col gap-y-3 col-span-2 row-span-1 col-start-4 row-start-3`}>
-                { projectListItems.map((nav, key) =>
-                  <div
-                    key={key}
-                    className={`${projectItemStyle} ${ key === activePhotoList ? '' : 'hidden' }`}
-                  >
-                    <p className="font-bold text-md">{nav}</p>
-                    <p className={`text-xs`}>{projectBlurbs[key]}</p>
-                    <p className="text-[10px]">{projectTech[key]}</p>
-                    <p className="text-[8px]">{projectDates[key]}</p>
-                  </div>
-                )}
-              </div>
-            </div>
-
-            <div className={mainSectionStyle}>
-              <div className={gridStyle}></div>
-              <div className={gridStyle}></div>
-              <div className={gridStyle}></div>
-              <div className={gridStyle}></div>
-              <div className={gridStyle}></div>
-              <div className={gridStyle}></div>
-              <div className={gridStyle}></div>
-              <div className={gridStyle}></div>
-              <div className={gridStyle}></div>
-              <div className={gridStyle}></div>
-              <div className={gridStyle}></div>
-              <div className={gridStyle}></div>
-              <div className={gridStyle}></div>
-              <div className={gridStyle}></div>
-              <div className={gridStyle}></div>
-              <div className={gridStyle}></div>
-            </div>
-          </div>
+          <Index />
+          <Work />
+        </div>
 
         <img className="h-[20px] absolute bottom-[48px]" src="../public/rounded_inner_corner.svg" width={20} alt=""></img>
         <img
