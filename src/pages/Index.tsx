@@ -11,7 +11,7 @@ export default function Index() {
   const projectDates = ['2024', '2025', '2021', '2021'];
   const projectTech = [
     `[ react, next.js, vercel, tailwindCSS ]`, `[ react, vite, supabase, tailwindCSS, netlify ]`,
-    `[ react, next.js, vercel, tailwindCSS ]`, `[ react, next.js, vercel, tailwindCSS ]`
+    `[ react, next.js, AWS, CSS ]`, `[ react, next.js, AWS, tailwindCSS, auth0, PostgreSQL ]`
   ]
   const photoList = ['public/portfolio-v1.png', 'public/codeAndTell.png', 'public/royalepage.gif', 'public/duguid.gif'];
 
@@ -30,7 +30,7 @@ export default function Index() {
       }
     }
 
-    setTimeout(cycleCarousel, 2000)
+    setTimeout(cycleCarousel, 2000);
   })
 
   return (
