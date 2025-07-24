@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 
 export default function Work() {
-  const [activePhotoList, setActivePhotoList] = useState(0);
+  const [activeBootcampPhotoList, setActiveBootcampPhotoList] = useState(-1);
+  const [activePersonalPhotoList, setActivePersonalPhotoList] = useState(-1);
 
   const bootcampProjectItems = ['atelier', 'duguid construction'];
   const bootcampProjectBlurbs = [
@@ -17,34 +18,38 @@ export default function Work() {
   const personalProjectDates = ['2024', '2025'];
   const personalProjectTech = [`[ react, next.js, vercel, tailwindCSS ]`, `[ react, vite, supabase, tailwindCSS, netlify ]`];
 
-  const photoList = ['public/portfolio-v1.png', 'public/codeAndTell.png', 'public/royalepage.gif', 'public/duguid.gif'];
+  const bootcampPhotoList = ['public/royalepage.gif', 'public/duguid.gif'];
+  const personalPhotoList = ['public/portfolio-v1.png', 'public/codeAndTell.png'];
 
   const testBorder = 'border-[0.5px] border-solid border-red-500';
+  const testGridStyle = `bg-black-800 w-full`;
 
   const mainSectionStyle = `w-full bg-black-900 rounded-lg grid grid-cols-8 gap-4 px-18 py-18`;
-  const gridStyle = `bg-black-800 w-full`;
   const projectItemStyle = `flex flex-col w-full gap-y-3 font-main`;
-
-  useEffect(() => {
-    function cycleCarousel () {
-      if (activePhotoList < photoList.length - 1) {
-        setActivePhotoList(activePhotoList + 1)
-      } else {
-        setActivePhotoList(0);
-      }
-    }
-
-    setTimeout(cycleCarousel, 2000)
-  })
 
   return (
     <>
       <div className={mainSectionStyle}>
-        <div className={gridStyle}></div>
-        <div className={gridStyle}></div>
-        <div className={gridStyle}></div>
-        <div className={gridStyle}></div>
-        <div className={gridStyle}></div>
+        <div className={`absolute w-1/6 h-1/6 right-[5%] top-[10%] overflow-hidden`}>
+          { bootcampPhotoList.map((photo, key) =>
+            <div
+              key={key}
+              className={`h-full ${ key === activeBootcampPhotoList ? '' : 'hidden' }`}
+            >
+              <img className={`object-cover w-full h-full`} src={photo}></img>
+            </div>
+          )}
+        </div>
+        <div className={`absolute w-1/6 h-1/6 right-[5%] top-[10%] overflow-hidden`}>
+          { personalPhotoList.map((photo, key) =>
+            <div
+              key={key}
+              className={`h-full ${ key === activePersonalPhotoList ? '' : 'hidden' }`}
+            >
+              <img className={`object-cover w-full h-full`} src={photo}></img>
+            </div>
+          )}
+        </div>
         <div className={`col-start-3 row-start-1 text-base font-main`}>
           <h1> Works </h1>
         </div>
@@ -67,7 +72,12 @@ export default function Work() {
             className={`${projectItemStyle}`}
           >
             { bootcampProjectItems.map((item, key) =>
-              <div key={key} className={`group hover:cursor-pointer`}>
+              <div
+                key={key}
+                className={`group hover:cursor-pointer`}
+                onMouseEnter={() => { setActiveBootcampPhotoList(key) }}
+                onMouseLeave={() => { setActiveBootcampPhotoList(-1) }}
+              >
                 <div
                   className={`
                     flex flex-row gap-x-2 items-center mb-1 group-hover:border-white group-hover:border-solid group-hover:border-b-1
@@ -90,13 +100,19 @@ export default function Work() {
             )}
           </div>
         </div>
+
         <h3 className={`col-span-2 col-start-3 row-start-9 indent-12 text-base font-main`}> personal projects </h3>
         <div className={`col-span-3 col-start-4 row-span-6 row-start-10 font-main`}>
           <div
             className={`${projectItemStyle}`}
           >
             { personalProjectItems.map((item, key) =>
-              <div key={key} className={`group hover:cursor-pointer`}>
+              <div
+                key={key}
+                className={`group hover:cursor-pointer`}
+                onMouseEnter={() => { setActivePersonalPhotoList(key) }}
+                onMouseLeave={() => { setActivePersonalPhotoList(-1) }}
+              >
                 <div
                   className={`
                     flex flex-row gap-x-2 items-center mb-1 group-hover:border-white group-hover:border-solid group-hover:border-b-1
@@ -119,11 +135,6 @@ export default function Work() {
             )}
           </div>
         </div>
-        <div className={gridStyle}></div>
-        <div className={gridStyle}></div>
-        <div className={gridStyle}></div>
-        <div className={gridStyle}></div>
-        <div className={gridStyle}></div>
       </div>
     </>
   )
