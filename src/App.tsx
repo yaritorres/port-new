@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { animate, createAnimatable, utils } from 'animejs';
 import Work from "./pages/Work";
 import Index from "./pages/Index";
 
@@ -11,8 +12,8 @@ function App() {
   const testBorder = 'border-[0.5px] border-solid border-red-500';
 
   const sideNavDivStyle = `
-    flex flex-row place-items-center w-full gap-x-3 px-1 rounded-[2px] text-center text-[10px] bg-black-900
-    hover:bg-white hover:text-black-950 hover:cursor-pointer
+    flex flex-row place-items-center w-full gap-x-3 px-1 rounded-[2px] text-center text-[10px] bg-black-900 nav
+    hover:cursor-pointer
   `;
   const bottomNavListStyle = `
     inline-block text-white text-xs px-3 bg-black-900
@@ -21,30 +22,57 @@ function App() {
 
   const circle = <div className={``}>{']'}</div>;
 
+  const navItem = createAnimatable('.nav', {
+    backgroundColor: 0,
+    duration: 400
+  });
+
+  const rgb = [164, 255, 79];
+
+// Sets new durations and easings
+  navItem.backgroundColor(rgb, 250);
+
+  const onMouseClick = () => {
+    navItem.backgroundColor(rgb); // Update values
+  }
+
+  const onMouseLeave = () => {
+    navItem.backgroundColor(0); // Update values
+  }
+
+  window.addEventListener('mouseenter', onMouseClick);
+  window.addEventListener('mouseleave', onMouseLeave);
+
   return (
     <>
       <div className={`
-          w-screen h-screen bg-black-950 rounded-lg absolute inset-0 py-[48px] px-[12px]
+          w-screen h-screen bg-black-950 rounded-lg absolute inset-0 py-[48px] px-[12px] z-50
         `}
       >
-        <img className="h-[20px] scale-y-[-1] absolute" src="../public/rounded_inner_corner.svg" width={20} alt=""></img>
+        <div
+          className={`
+            absolute inset-[-200%] bg-[url(/grain_background.png)] z-10 animate-grain
+          `}
+        >
+        </div>
+        <img className="h-[20px] scale-y-[-1] absolute" src="../rounded_inner_corner.svg" width={20} alt=""></img>
         <img
           className="h-[20px] scale-x-[-1] scale-y-[-1] absolute right-[12px]"
-          src="../public/rounded_inner_corner.svg"
+          src="../rounded_inner_corner.svg"
           width={20}
           alt=""
         >
         </img>
 
-        <div className={`w-full h-full flex flex-col gap-y-[12px] overflow-y-scroll scrollbar-hidden`}>
+        <div className={`w-full h-full flex flex-col gap-y-[8px] overflow-y-scroll scrollbar-hidden`}>
           <Index />
           <Work />
         </div>
 
-        <img className="h-[20px] absolute bottom-[48px]" src="../public/rounded_inner_corner.svg" width={20} alt=""></img>
+        <img className="h-[20px] absolute bottom-[48px]" src="../rounded_inner_corner.svg" width={20} alt=""></img>
         <img
           className="h-[20px] scale-x-[-1] absolute bottom-[48px] right-[12px]"
-          src="../public/rounded_inner_corner.svg"
+          src="../rounded_inner_corner.svg"
           width={20}
           alt=""
         ></img>
@@ -52,7 +80,7 @@ function App() {
 
         { /* BOTTOM NAV */ }
         {/* <div className="flex flex-row absolute lg:left-[43%] bottom-[48px] h-8">
-          <img className="scale-x-[-1] h-[40px]" src="../public/rounded_inner_corner.svg" width={30} alt=""></img>
+          <img className="scale-x-[-1] h-[40px]" src="../rounded_inner_corner.svg" width={30} alt=""></img>
           <div
             className={`
             bg-black-950 rounded-t-lg h-12
@@ -70,12 +98,12 @@ function App() {
               </div>
             </ul>
           </div>
-          <img className="h-[40px]" src="../public/rounded_inner_corner.svg" width={30} alt=""></img>
+          <img className="h-[40px]" src="../rounded_inner_corner.svg" width={30} alt=""></img>
         </div> */}
 
       { /* SIDE NAV */ }
       <div id="side-nav-container" className="absolute top-[45%] left-[12px] flex flex-col">
-        <img id="corner-top" className="h-[20px]" src="../public/rounded_inner_corner.svg" width={20} alt=""></img>
+        <img id="corner-top" className="h-[20px]" src="../rounded_inner_corner.svg" width={20} alt=""></img>
         <div
           onMouseEnter={() => { setIsSideNavOpen(true) }}
           onMouseLeave={() => { setIsSideNavOpen(false) }}
@@ -97,7 +125,7 @@ function App() {
             )}
           </div>
         </div>
-        <img id="corner-bottom" className="scale-y-[-1] h-[20px]" src="../public/rounded_inner_corner.svg" width={20} alt=""></img>
+        <img id="corner-bottom" className="scale-y-[-1] h-[20px]" src="../rounded_inner_corner.svg" width={20} alt=""></img>
       </div>
     </>
   )

@@ -84,6 +84,19 @@ button:focus-visible {
   --color-blorange: #f34213;
 
   --font-main: "Roboto Mono", monospace;
+
+  --background-image: 'public/grain_background.png';
+
+  --animate-grain: grain 0.2s linear infinite;
+
+  @keyframes grain {
+    0% {
+      transform: translateX(10%) translateY(10%);
+    }
+    100% {
+      transform: translateX(-10%) translateY(-10%);
+    }
+  }
 }
 
 @utility scrollbar-hidden {
