@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { motion } from "motion/react"
 import BootcampProjects from "../components/BootcampProjects";
 import PersonalProjects from "../components/PersonalProjects";
 import Artwork from "../components/Artwork";
@@ -19,7 +20,7 @@ export default function Work() {
   const testGridStyle = `col-start-1 bg-black-800 w-full`;
 
   const mainSectionStyle = `
-    w-full bg-black-900 rounded-lg grid grid-cols-8 gap-4 px-18 py-18
+    w-full bg-radial from-black-900 to-black-930 rounded-lg grid grid-cols-8 gap-4 px-18 py-18
   `;
 
   return (

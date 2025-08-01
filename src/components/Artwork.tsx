@@ -1,4 +1,6 @@
-const graphicArtItems = ['RATWARE CORP', 'psychic ops', 'orange love', 'the dreamer', 'christmas party'];
+import { motion } from "motion/react";
+
+const graphicArtItems = ['[ RATWARE CORP ]', '[ PSYCHIC OPS ]', '[ ORANGE LOVE ]', '[ THE DREAMER ]', '[ CHRISTMAS PARTY ]'];
 const graphicArtBlurbs = [
   'business card size graphic art made in illustrator', 'business card size graphic art made in illustrator',
   'business card size graphic art made in illustrator', 'business card size graphic art made in illustrator',
@@ -23,16 +25,17 @@ export default function Artwork (props: GraphicArtProps) {
         { graphicArtItems.map((item, key) =>
           <div
             key={key}
-            className={`group hover:cursor-pointer`}
+            className={`select-none`}
             onMouseEnter={() => { props.setActiveGraphicPhotoList(key) }}
             onMouseLeave={() => { props.setActiveGraphicPhotoList(-1) }}
           >
-            <div
+            <motion.div
+              whileHover={{ borderBottom: '1px solid white', width: '100%' }}
               className={`
-                flex flex-row gap-x-2 items-center mb-1 group-hover:border-white group-hover:border-solid group-hover:border-b-1
+                w-fit flex flex-row gap-x-2 items-center mb-1 hover:cursor-pointer
               `}
             >
-              <h4 className={`text-sm `}>{item}</h4>
+              <h4 className={`text-sm`}>{item}</h4>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 300 300"
@@ -41,7 +44,7 @@ export default function Artwork (props: GraphicArtProps) {
               >
                 <path className="fill-blorange" d="M.02 0v39.49h229.91L0 269.42 30.58 300 260.51 70.07v229.91H300V0z"/>
               </svg>
-            </div>
+            </motion.div>
             <p className={`text-xs`}>{graphicArtBlurbs[key]}</p>
             <p className={`text-[10px]`}>{graphicArtTech[key]}</p>
             <p className={`text-[10px]`}>{graphicArtDates[key]}</p>

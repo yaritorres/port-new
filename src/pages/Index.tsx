@@ -18,7 +18,7 @@ export default function Index() {
   const testBorder = 'border-[0.5px] border-solid border-red-500';
   const gridStyle = `bg-black-800 w-full h-full`;
 
-  const mainSectionStyle = `w-full min-h-full bg-black-900 rounded-lg grid grid-cols-8 grid-rows-4 gap-4 px-18 py-18`;
+  const mainSectionStyle = `w-full h-full bg-radial from-black-900 to-black-930 rounded-lg grid grid-cols-8 grid-rows-4 gap-4 px-18 py-18`;
   const projectItemStyle = `flex flex-col w-full h-full gap-y-1 font-main`;
 
   useEffect(() => {
