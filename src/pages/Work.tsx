@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { motion } from "motion/react"
 import BootcampProjects from "../components/BootcampProjects";
 import PersonalProjects from "../components/PersonalProjects";
 import Artwork from "../components/Artwork";
