@@ -1,74 +1,89 @@
-import { useEffect, useState } from "react";
+import Work from '../components/Work';
+import FeaturedWork from '../components/FeaturedWork';
+import Contact from '../components/Contact';
+import SideNav from '../custom-ui/SideNav';
 
-export default function Index() {
-  const [activePhotoList, setActivePhotoList] = useState(0);
-
-  const projectListItems = ['portfolio v.1', 'codeAndTell', 'atelier', 'duguid construction'];
-  const projectBlurbs = [
-    'the first portfolio i created and deployed', 'a platform where devs can come together to easily find side projects to work on',
-    'mock e-commerce site in the early days of my bootcamp', 'final project to create a full-scale app for a mock construction company'
-  ];
-  const projectDates = ['2024', '2025', '2021', '2021'];
-  const projectTech = [
-    `[ react, next.js, vercel, tailwindCSS ]`, `[ react, vite, supabase, tailwindCSS, netlify ]`,
-    `[ react, next.js, AWS, CSS ]`, `[ react, next.js, AWS, tailwindCSS, auth0, PostgreSQL ]`
-  ]
-  const photoList = ['public/portfolio-v1.png', 'public/codeAndTell.png', 'public/royalepage.gif', 'public/duguid.gif'];
-
-  const testBorder = 'border-[0.5px] border-solid border-red-500';
-  const gridStyle = `bg-black-800 w-full h-full`;
-
-  const mainSectionStyle = `w-full h-full bg-radial from-black-900 to-black-930 rounded-lg grid grid-cols-8 grid-rows-4 gap-4 px-18 py-18`;
-  const projectItemStyle = `flex flex-col w-full h-full gap-y-1 font-main`;
-
-  useEffect(() => {
-    function cycleCarousel () {
-      if (activePhotoList < photoList.length - 1) {
-        setActivePhotoList(activePhotoList + 1)
-      } else {
-        setActivePhotoList(0);
-      }
-    }
-
-    setTimeout(cycleCarousel, 2000);
-  })
+function Index() {
+  const bottomNavListStyle = `
+    inline-block text-white text-xs px-3 bg-black-900
+    hover:text-black-950 hover:bg-white hover:cursor-pointer
+  `;
 
   return (
-    <div className={mainSectionStyle}>
-      <div className={`col-span-2 row-span-2 font-main text-xl col-start-1`}>
-        welcome to my portfolio. <br></br>
-        welcome to my portfolio. <br></br>
-        welcome to my portfolio. <br></br>
-        welcome to my portfolio. <br></br>
-        welcome to my portfolio. <br></br>
-        welcome to my portfolio. <br></br>
-        welcome to my portfolio. <br></br>
-        welcome to my portfolio. <br></br>
+    <>
+      <div
+        className={`
+          relative w-screen h-screen bg-black-950 rounded-lg inset-0 py-[48px] px-[12px] z-50 overflow-hidden text-black-50
+        `}
+      >
+        <div
+          className={`
+          absolute bg-fixed bg-auto inset-[-50%_0%_0%_-50%] w-[200%] h-[200vh] pointer-events-none mix-blend-normal
+          bg-[url(/grain_background.png)] z-10 animate-grain
+        `}
+        />
+
+        <img
+          className="h-[20px] scale-y-[-1] absolute"
+          src="../rounded_inner_corner.svg"
+          width={20}
+          alt=""
+        ></img>
+        <img
+          className="h-[20px] scale-x-[-1] scale-y-[-1] absolute right-[12px]"
+          src="../rounded_inner_corner.svg"
+          width={20}
+          alt=""
+        ></img>
+
+        <div
+          className={`w-full h-full flex flex-col gap-y-[8px] overflow-y-scroll scrollbar-hidden`}
+        >
+          <FeaturedWork />
+          <Work />
+          <Contact />
+        </div>
+
+        <img
+          className="h-[20px] absolute bottom-[48px]"
+          src="../rounded_inner_corner.svg"
+          width={20}
+          alt=""
+        ></img>
+        <img
+          className="h-[20px] scale-x-[-1] absolute bottom-[48px] right-[12px]"
+          src="../rounded_inner_corner.svg"
+          width={20}
+          alt=""
+        ></img>
       </div>
-      <div className={`col-span-3 row-span-2 col-start-6 row-start-2 overflow-hidden`}>
-        <p className="font-main text-lg font-bold"> FEATURED WORK </p>
-        { photoList.map((photo, key) =>
+
+      <SideNav />
+
+      {/* BOTTOM NAV */}
+      {/* <div className="flex flex-row absolute lg:left-[43%] bottom-[48px] h-8">
+          <img className="scale-x-[-1] h-[40px]" src="../rounded_inner_corner.svg" width={30} alt=""></img>
           <div
-            key={key}
-            className={`h-full ${ key === activePhotoList ? '' : 'hidden' }`}
+            className={`
+            bg-black-950 rounded-t-lg h-12
+            `}
           >
-            <img className={`object-cover w-full h-full`} src={photo}></img>
+            <ul className="flex flex-row">
+              <div className={``}>
+                <li className={bottomNavListStyle}> home </li>
+              </div>
+              <div className="">
+                <li className={bottomNavListStyle}> projects </li>
+              </div>
+              <div className="">
+                <li className={bottomNavListStyle}> contact </li>
+              </div>
+            </ul>
           </div>
-        )}
-      </div>
-      <div className={`flex flex-col gap-y-3 col-span-2 row-span-1 col-start-4 row-start-3`}>
-        { projectListItems.map((nav, key) =>
-          <div
-            key={key}
-            className={`${projectItemStyle} ${ key === activePhotoList ? '' : 'hidden' }`}
-          >
-            <p className="font-bold text-md">{nav}</p>
-            <p className={`text-xs`}>{projectBlurbs[key]}</p>
-            <p className="text-[10px]">{projectTech[key]}</p>
-            <p className="text-[8px]">{projectDates[key]}</p>
-          </div>
-        )}
-      </div>
-    </div>
-  )
+          <img className="h-[40px]" src="../rounded_inner_corner.svg" width={30} alt=""></img>
+        </div> */}
+    </>
+  );
 }
+
+export default Index;

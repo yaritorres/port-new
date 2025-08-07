@@ -1,7 +1,7 @@
 import { useState } from "react";
-import BootcampProjects from "../components/BootcampProjects";
-import PersonalProjects from "../components/PersonalProjects";
-import Artwork from "../components/Artwork";
+import BootcampProjects from "./BootcampProjects";
+import PersonalProjects from "./PersonalProjects";
+import Artwork from "./Artwork";
 
 export default function Work() {
   const [activeBootcampPhotoList, setActiveBootcampPhotoList] = useState(-1);
