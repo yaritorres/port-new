@@ -35,7 +35,7 @@ export default function FeaturedWork() {
 
   return (
     <div className={mainSectionStyle}>
-      <div className={`col-span-2 row-span-2 font-main text-xl col-start-1`}>
+      <div className={`col-span-2 font-main text-xl col-start-1`}>
         welcome to my portfolio. <br></br>
         welcome to my portfolio. <br></br>
         welcome to my portfolio. <br></br>

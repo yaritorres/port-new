@@ -1,4 +1,5 @@
 import { motion } from "motion/react";
+import { Link } from "react-router";
 
 const bootcampProjectItems = ['atelier', 'duguid construction'];
 const bootcampProjectBlurbs = [
@@ -31,7 +32,7 @@ export default function BootcampProjects (props: BootcampProjectsProps) {
                 w-fit flex flex-row gap-x-2 items-center mb-1 hover:cursor-pointer
               `}
             >
-              <h4 className={`text-sm `}>{item}</h4>
+              <Link to="/atelier" className={`text-sm`}>{item}</Link>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 300 300"
