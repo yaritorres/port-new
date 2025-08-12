@@ -6,6 +6,7 @@ const bootcampProjectBlurbs = [
   'mock e-commerce site in the early days of my bootcamp', 'final project to create a full-scale app for a mock construction company'
 ];
 const bootcampProjectDates = ['2021', '2021'];
+const bootcampProjectLinks = ['atelier', 'duguid'];
 const bootcampProjectTech = [`[ react, next.js, vercel, tailwindCSS ]`, `[ react, next.js, vercel, tailwindCSS ]`];
 const projectItemStyle = `flex flex-col w-full gap-y-3 font-main`;
 
@@ -32,7 +33,7 @@ export default function BootcampProjects (props: BootcampProjectsProps) {
                 w-fit flex flex-row gap-x-2 items-center mb-1 hover:cursor-pointer
               `}
             >
-              <Link to="/atelier" className={`text-sm`}>{item}</Link>
+              <Link to={bootcampProjectLinks[key]} className={`text-sm`}>{item}</Link>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 300 300"
