@@ -1,10 +1,12 @@
 import { motion } from "motion/react";
+import { Link } from "react-router";
 
 const personalProjectItems = ['portfolio v.1', 'codeAndTell'];
 const personalProjectBlurbs = [
   'the first portfolio i created and deployed', 'a platform where devs can come together to easily find side projects to work on'
 ];
 const personalProjectDates = ['2024', '2025'];
+const personalProjectLinks = ['portfolio-v1', 'codeAndTell'];
 const personalProjectTech = [`[ react, next.js, vercel, tailwindCSS ]`, `[ react, vite, supabase, tailwindCSS, netlify ]`];
 const projectItemStyle = `flex flex-col w-full gap-y-3 font-main`;
 
@@ -31,7 +33,7 @@ export default function PersonalProjects (props: PersonalProjectsProps) {
                 w-fit flex flex-row gap-x-2 items-center mb-1 hover:cursor-pointer
               `}
             >
-              <h4 className={`text-sm `}>{item}</h4>
+              <Link to={personalProjectLinks[key]} className={`text-sm `}>{item}</Link>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 300 300"

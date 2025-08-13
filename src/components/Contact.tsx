@@ -10,7 +10,7 @@ export default function Contact() {
   const contactLinks = [
     'https://www.linkedin.com/in/yaritorresnicola/',
     'https://github.com/yaritorres',
-    'https://www.instagram.com/ratwarecorporation',
+    'https://www.instagram.com/theratwarecorporation/',
   ];
 
   const mainSectionStyle = `w-full h-full bg-radial from-black-900 to-black-930 rounded-lg grid grid-cols-8 grid-rows-4 gap-4 px-18 py-18`;
