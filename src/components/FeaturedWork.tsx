@@ -64,7 +64,7 @@ export default function FeaturedWork() {
           >
             <p className="font-bold text-md">{nav}</p>
             <p className={`text-xs`}>{projectBlurbs[key]}</p>
-            <p className="text-[10px]">{projectTech[key]}</p>
+            <p className="text-[10px] text-blorange">{projectTech[key]}</p>
             <p className="text-[8px]">{projectDates[key]}</p>
           </div>
         )}

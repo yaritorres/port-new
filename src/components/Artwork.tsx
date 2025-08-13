@@ -1,12 +1,14 @@
 import { motion } from "motion/react";
+import { Link } from "react-router";
 
-const graphicArtItems = ['[ RATWARE CORP ]', '[ PSYCHIC OPS ]', '[ ORANGE LOVE ]', '[ THE DREAMER ]', '[ CHRISTMAS PARTY ]'];
+const graphicArtItems = ['[ RATWARE_CORP ]', '[ PSYCHIC_OPS ]', '[ ORANGE_LOVE ]', '[ THE_DREAMER ]', '[ CHRISTMAS_PARTY ]'];
 const graphicArtBlurbs = [
   'business card size graphic art made in illustrator', 'business card size graphic art made in illustrator',
   'business card size graphic art made in illustrator', 'business card size graphic art made in illustrator',
   'business card size graphic art made in illustrator'
 ];
 const graphicArtDates = ['2025', '2025', '2025', '2025', '2025'];
+const graphicArtLinks = ['RATWARE-CORP', 'PSYCHIC-OPS', 'ORANGE-LOVE', 'THE-DREAMER', 'CHRISTMAS-PARTY'];
 const graphicArtTech = [
   `[ adobe illustrator ]`, `[ adobe illustrator ]`, `[ adobe illustrator ]`, `[ adobe illustrator ]`, `[ adobe illustrator ]`
 ];
@@ -35,7 +37,7 @@ export default function Artwork (props: GraphicArtProps) {
                 w-fit flex flex-row gap-x-2 items-center mb-1 hover:cursor-pointer
               `}
             >
-              <h4 className={`text-sm`}>{item}</h4>
+              <Link to={graphicArtLinks[key]} className={`text-sm`}>{item}</Link >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 300 300"
