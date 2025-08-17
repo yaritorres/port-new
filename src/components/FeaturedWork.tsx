@@ -41,7 +41,7 @@ export default function FeaturedWork() {
         welcome to my portfolio. <br></br>
         welcome to my portfolio. <br></br>
         welcome to my portfolio. <br></br>
-        welcome to my portfolio. <br></br>
+        <p className="text-blorange">welcome to my portfolio.</p>
         welcome to my portfolio. <br></br>
         welcome to my portfolio. <br></br>
       </div>

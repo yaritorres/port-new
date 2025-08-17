@@ -9,7 +9,11 @@ import Atelier from './pages/projects/bootcamp/Atelier';
 import Duguid from "./pages/projects/bootcamp/Duguid";
 import CodeAndTell from "./pages/projects/personal/CodeAndTell";
 import PortfolioVersionOne from "./pages/projects/personal/PortfolioVersionOne";
-import RatwareCorp from "./pages/artwork/graphic art/RatwareCorp";
+import RatwareCorp from "./pages/artwork/graphic-art/RATWARECORP";
+import PsychicOps from "./pages/artwork/graphic-art/PsychicOps";
+import OrangeLove from "./pages/artwork/graphic-art/OrangeLove";
+import TheDreamer from "./pages/artwork/graphic-art/TheDreamer";
+import ChristmasParty from "./pages/artwork/graphic-art/ChristmasParty";
 
 function App() {
   return (
@@ -20,7 +24,11 @@ function App() {
         <Route path="/duguid" element={ <Duguid /> }/>
         <Route path="/codeAndTell" element={ <CodeAndTell /> }/>
         <Route path="/portfolio-v1" element={ <PortfolioVersionOne /> }/>
-        <Route path="/RATWARE-CORP" element={ <RatwareCorp /> }/>
+        <Route path="/RATWARE_CORP" element={ <RatwareCorp /> }/>
+        <Route path="/PSYCHIC_OPS" element={ <PsychicOps /> }/>
+        <Route path="/ORANGE_LOVE" element={ <OrangeLove /> }/>
+        <Route path="/THE_DREAMER" element={ <TheDreamer /> }/>
+        <Route path="/CHRISTMAS_PARTY" element={ <ChristmasParty /> }/>
       </Routes>
     </Router>
   );
