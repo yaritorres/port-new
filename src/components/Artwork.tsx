@@ -10,7 +10,7 @@ const graphicArtBlurbs = [
 const graphicArtDates = ['2025', '2025', '2025', '2025', '2025'];
 const graphicArtLinks = ['RATWARE_CORP', 'PSYCHIC_OPS', 'ORANGE_LOVE', 'THE_DREAMER', 'CHRISTMAS_PARTY'];
 const graphicArtTech = [
-  `[ adobe illustrator ]`, `[ adobe illustrator ]`, `[ adobe illustrator ]`, `[ adobe illustrator ]`, `[ adobe illustrator ]`
+  `[ adobe illustrator ]`, `[ adobe illustrator ]`, `[ adobe illustrator ]`, `[ adobe illustrator ]`, `[ adobe illustrator, photoshop ]`
 ];
 const projectItemStyle = `flex flex-col w-full gap-y-3 font-main`;
 

@@ -1,6 +1,9 @@
 import { motion } from "motion/react"
+import { useState } from "react";
 
 export default function Contact() {
+  const [isPdfOpen, setIsPdfOpen] = useState(false);
+
   const contactItems = [
     'linkedin',
     'github',
@@ -13,10 +16,17 @@ export default function Contact() {
     'https://www.instagram.com/theratwarecorporation/',
   ];
 
-  const mainSectionStyle = `w-full h-full bg-radial from-black-900 to-black-930 rounded-lg grid grid-cols-8 grid-rows-4 gap-4 px-18 py-18`;
+  const mainSectionStyle = `
+    w-full h-full rounded-lg grid grid-cols-8 grid-rows-4 gap-4 px-18 py-18
+    ${ isPdfOpen ? 'bg-black-930' : 'bg-radial from-black-900 to-black-930' } ${ isPdfOpen ? 'scroll-hidden' : '' }
+  `;
 
   return (
-    <div className={mainSectionStyle}>
+    <motion.div layout className={mainSectionStyle} onClick={() => isPdfOpen ? setIsPdfOpen(false) : () => { return } }>
+      <motion.div className={`z-10 w-full max-h-4/6 top-1/6 left-2/6 absolute overflow-scroll scrollbar-hidden ${ isPdfOpen ? '' : 'hidden'}`}>
+        <img src="public/Yari Torres Nicola Resume-1.png" className="w-1/2"/>
+        <img src="public/Yari Torres Nicola Resume-2.png" className="w-1/2"/>
+      </motion.div>
       <div
         className={`flex flex-row items-center gap-x-20 col-start-4 row-start-2 col-span-5 font-main text-[80px]`}
       >
@@ -31,10 +41,31 @@ export default function Contact() {
         <p className="">{`{ contact }`}</p>
       </div>
       <div
-        className={`flex flex-col h-fit gap-y-3 col-span-3 col-start-3 row-start-3`}
+        className={`flex flex-col h-fit gap-y-3 col-span-3 col-start-3 row-start-3 ${ isPdfOpen ? 'opacity-10' : '' }`}
       >
+        <motion.div
+          whileHover={{ borderBottom: '1px solid white', width: '100%' }}
+          className='w-fit flex flex-row gap-x-3 items-center hover:cursor-pointer'
+          onClick={() => setIsPdfOpen(true)}
+        >
+          <p className="font-main text-lg text-white">
+            resume
+          </p>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 300 300"
+            xmlSpace="preserve"
+            className="w-2 h-2"
+          >
+            <path className="fill-blorange" d="M.02 0v39.49h229.91L0 269.42 30.58 300 260.51 70.07v229.91H300V0z"/>
+          </svg>
+        </motion.div>
         { contactItems.map((contact, key) =>
-          <motion.div whileHover={{ borderBottom: '1px solid white', width: '100%' }} className='w-fit flex flex-row gap-x-3 items-center'>
+          <motion.div
+            key={key}
+            whileHover={{ borderBottom: '1px solid white', width: '100%' }}
+            className='w-fit flex flex-row gap-x-3 items-center'
+          >
             <a
               href={contactLinks[key]}
               rel="no referrer"
@@ -55,6 +86,6 @@ export default function Contact() {
           </motion.div>
         )}
       </div>
-    </div>
+    </motion.div>
   );
 }

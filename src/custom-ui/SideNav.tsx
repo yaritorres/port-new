@@ -52,7 +52,7 @@ export default function SideNav() {
               }}
             >
               {circle}
-              <p className={`${isSideNavOpen ? '' : 'hidden'}`}>{nav}</p>
+              <motion.p className={`${isSideNavOpen ? '' : 'hidden'}`}>{nav}</motion.p>
             </motion.div>
           ))}
         </div>
