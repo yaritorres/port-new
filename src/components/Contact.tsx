@@ -17,13 +17,15 @@ export default function Contact() {
   ];
 
   const mainSectionStyle = `
-    w-full h-full rounded-lg grid grid-cols-8 grid-rows-4 gap-4 px-18 py-18
-    ${ isPdfOpen ? 'bg-black-930' : 'bg-radial from-black-900 to-black-930' } ${ isPdfOpen ? 'scroll-hidden' : '' }
+    w-full h-full rounded-lg grid grid-cols-8 grid-rows-4 gap-4 px-18 py-18 bg-radial from-black-900 to-black-930
+    ${ isPdfOpen ? 'scroll-hidden' : '' }
   `;
 
   return (
     <motion.div layout className={mainSectionStyle} onClick={() => isPdfOpen ? setIsPdfOpen(false) : () => { return } }>
-      <motion.div className={`z-10 w-full max-h-4/6 top-1/6 left-2/6 absolute overflow-scroll scrollbar-hidden ${ isPdfOpen ? '' : 'hidden'}`}>
+      <motion.div
+        className={`z-10 w-full max-h-4/6 top-1/6 left-2/6 absolute overflow-scroll scrollbar-hidden ${ isPdfOpen ? '' : 'hidden'}`}
+      >
         <img src="public/Yari Torres Nicola Resume-1.png" className="w-1/2"/>
         <img src="public/Yari Torres Nicola Resume-2.png" className="w-1/2"/>
       </motion.div>

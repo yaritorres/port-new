@@ -1,16 +1,25 @@
 import { useState } from "react";
-import { motion } from "motion/react";
+import { color, motion } from "motion/react";
 
 export default function SideNav() {
   const [isSideNavOpen, setIsSideNavOpen] = useState(false);
   const [activeSideNav, setActiveSideNav] = useState(0);
 
   const sideNavItems = ['index', 'projects', 'contact'];
+  const sideNavDelay = [ 0.2, 0.5, 0.3 ];
+
+  const sideNavActiveStyle = {
+    backgroundColor: isSideNavOpen ? [ '#000000', '#ffffff', '#000000', '#ffffff', '#ffffff' ] : '#000000',
+  };
+
+  const sideNavInactiveStyle = {
+    backgroundColor: isSideNavOpen ? [ '#000000', '#ffffff', '#000000', '#ffffff', '#000000' ] : '#000000'
+  };
 
   const testBorder = 'border-[0.5px] border-solid border-red-500';
 
   const sideNavDivStyle = `
-    flex flex-row place-items-center w-full gap-x-3 px-1 rounded-[2px] text-center text-[10px] bg-black-900
+    flex flex-row place-items-center gap-x-3 px-1 rounded-[2px] text-center text-[10px] bg-black-900
     hover:cursor-pointer
   `;
 
@@ -36,6 +45,7 @@ export default function SideNav() {
           setIsSideNavOpen(false);
         }}
         whileHover={{ width: '100px' }}
+        transition={{ duration: 0.3 }}
         className={`
           flex justify-center p-3 bg-black-950 rounded-r-md
         `}
@@ -44,15 +54,25 @@ export default function SideNav() {
           {sideNavItems.map((nav, key) => (
             <motion.div
               key={key}
-              className={`${sideNavDivStyle} ${
-                key === activeSideNav ? 'bg-white text-black-950' : ''
-              }`}
+              className={`
+                ${sideNavDivStyle} ${ isSideNavOpen && activeSideNav === key ? 'text-black-950' : 'text-white' }
+              `}
               onClick={() => {
                 setActiveSideNav(key);
               }}
+              layout
+              transition={{ times: [ 0.4, 0.5, 0.7, 0.9, 1 ], delay: sideNavDelay[key] }}
+              initial={false}
+              animate={ activeSideNav === key ? sideNavActiveStyle : sideNavInactiveStyle }
             >
               {circle}
-              <motion.p className={`${isSideNavOpen ? '' : 'hidden'}`}>{nav}</motion.p>
+              <motion.p
+                layout
+                initial={{ display: 'none', opacity: 0 }}
+                animate={{ display: isSideNavOpen ? 'inline' : 'none', opacity: isSideNavOpen ? 1 : 0 }}
+              >
+                {nav}
+              </motion.p>
             </motion.div>
           ))}
         </div>
