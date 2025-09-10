@@ -18,7 +18,6 @@ export default function Contact() {
 
   const mainSectionStyle = `
     w-full h-full rounded-lg grid grid-cols-8 grid-rows-4 gap-4 px-18 py-18 bg-radial from-black-900 to-black-930
-    ${ isPdfOpen ? 'scroll-hidden' : '' }
   `;
 
   return (
@@ -30,7 +29,9 @@ export default function Contact() {
         <img src="public/Yari Torres Nicola Resume-2.png" className="w-1/2"/>
       </motion.div>
       <div
-        className={`flex flex-row items-center gap-x-20 col-start-4 row-start-2 col-span-5 font-main text-[80px]`}
+        className={`
+          flex flex-row items-center gap-x-20 col-start-4 row-start-2 col-span-5 font-main text-[80px] ${ isPdfOpen ? 'opacity-10' : '' }
+        `}
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"

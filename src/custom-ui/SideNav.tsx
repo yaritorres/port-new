@@ -1,18 +1,22 @@
 import { useState } from "react";
-import { color, motion } from "motion/react";
+import { useScroll, motion } from "motion/react";
 
 export default function SideNav() {
   const [isSideNavOpen, setIsSideNavOpen] = useState(false);
   const [activeSideNav, setActiveSideNav] = useState(0);
 
-  const sideNavItems = ['index', 'projects', 'contact'];
+  const flickerAnimation = {
+    display: 'none'
+  }
   const sideNavDelay = [ 0.2, 0.5, 0.3 ];
 
-  const sideNavActiveStyle = {
-    backgroundColor: isSideNavOpen ? [ '#000000', '#ffffff', '#000000', '#ffffff', '#ffffff' ] : '#000000',
+  const sideNavItems = ['index', 'projects', 'contact'];
+
+  const activeAnimation = {
+    backgroundColor: isSideNavOpen ? [ '#ffffff', '#000000', '#ffffff', '#000000', '#ffffff' ] : '#000000',
   };
 
-  const sideNavInactiveStyle = {
+  const inactiveAnimation = {
     backgroundColor: isSideNavOpen ? [ '#000000', '#ffffff', '#000000', '#ffffff', '#000000' ] : '#000000'
   };
 
@@ -22,6 +26,19 @@ export default function SideNav() {
     flex flex-row place-items-center gap-x-3 px-1 rounded-[2px] text-center text-[10px] bg-black-900
     hover:cursor-pointer
   `;
+
+  const scrollY = useScroll();
+
+  const scrollAnimation = {
+    scrollY: 30
+  }
+
+  const handleScroll = () => {
+    window.scroll({
+      top: 50,
+      behavior: 'smooth'
+    });
+  }
 
   const circle = <div className={``}>{'o'}</div>;
 
@@ -44,8 +61,8 @@ export default function SideNav() {
         onMouseLeave={() => {
           setIsSideNavOpen(false);
         }}
-        whileHover={{ width: '100px' }}
-        transition={{ duration: 0.3 }}
+        whileHover={{ width: '90px' }}
+        transition={{ duration: 0.3, delay: isSideNavOpen ? 0.4 : 0 }}
         className={`
           flex justify-center p-3 bg-black-950 rounded-r-md
         `}
@@ -63,13 +80,15 @@ export default function SideNav() {
               layout
               transition={{ times: [ 0.4, 0.5, 0.7, 0.9, 1 ], delay: sideNavDelay[key] }}
               initial={false}
-              animate={ activeSideNav === key ? sideNavActiveStyle : sideNavInactiveStyle }
+              animate={ activeSideNav === key ? activeAnimation : inactiveAnimation }
             >
               {circle}
               <motion.p
                 layout
+                transition={{ delay: 0.1, opacity: { delay: 0.3 }}}
                 initial={{ display: 'none', opacity: 0 }}
                 animate={{ display: isSideNavOpen ? 'inline' : 'none', opacity: isSideNavOpen ? 1 : 0 }}
+                onClick={handleScroll}
               >
                 {nav}
               </motion.p>
