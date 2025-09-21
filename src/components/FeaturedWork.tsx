@@ -15,9 +15,6 @@ export default function FeaturedWork() {
   ]
   const photoList = ['public/portfolio-v1.png', 'public/codeAndTell.png', 'public/royalepage.gif', 'public/duguid.gif'];
 
-  const testBorder = 'border-[0.5px] border-solid border-red-500';
-  const gridStyle = `bg-black-800 w-full h-full`;
-
   const mainSectionStyle = `w-full h-full bg-radial from-black-900 to-black-930 rounded-lg grid grid-cols-8 grid-rows-4 gap-4 px-18 py-18`;
   const projectItemStyle = `flex flex-col w-full h-full gap-y-1 font-main`;
 
@@ -34,7 +31,7 @@ export default function FeaturedWork() {
   })
 
   return (
-    <div className={mainSectionStyle}>
+    <div id="index" className={mainSectionStyle}>
       <div className={`col-span-2 font-main text-xl col-start-1`}>
         welcome to my portfolio. <br></br>
         welcome to my portfolio. <br></br>

@@ -4,25 +4,19 @@ import Contact from '../components/Contact';
 import SideNav from '../custom-ui/SideNav';
 
 function Index() {
-  const bottomNavListStyle = `
-    inline-block text-white text-xs px-3 bg-black-900
-    hover:text-black-950 hover:bg-white hover:cursor-pointer
-  `;
-
   return (
     <>
       <div
         className={`
-          relative w-screen h-screen bg-black-950 rounded-lg inset-0 py-[48px] px-[12px] z-50 overflow-hidden text-black-50
+          absolute max-h-screen bg-black-950 rounded-lg inset-0 py-[48px] px-[12px] z-50 overflow-hidden text-black-50
         `}
       >
         <div
           className={`
-          absolute bg-fixed bg-auto inset-[-50%_0%_0%_-50%] w-[200%] h-[200vh] pointer-events-none mix-blend-normal
-          bg-[url(/grain_background.png)] z-10 animate-grain
-        `}
+            absolute bg-fixed bg-auto inset-[-50%_0%_0%_-50%] w-[200%] h-[200vh] pointer-events-none mix-blend-normal
+            bg-[url(/grain_background.png)] z-10 animate-grain
+          `}
         />
-
         <img
           className="h-[20px] scale-y-[-1] absolute"
           src="../rounded_inner_corner.svg"

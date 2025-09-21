@@ -21,7 +21,12 @@ export default function Contact() {
   `;
 
   return (
-    <motion.div layout className={mainSectionStyle} onClick={() => isPdfOpen ? setIsPdfOpen(false) : () => { return } }>
+    <motion.div
+      layout
+      className={mainSectionStyle}
+      onClick={() => isPdfOpen ? setIsPdfOpen(false) : () => { return } }
+      id="contact"
+    >
       <motion.div
         className={`z-10 w-full max-h-4/6 top-1/6 left-2/6 absolute overflow-scroll scrollbar-hidden ${ isPdfOpen ? '' : 'hidden'}`}
       >

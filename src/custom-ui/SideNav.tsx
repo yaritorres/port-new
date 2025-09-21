@@ -1,16 +1,13 @@
 import { useState } from "react";
-import { useScroll, motion } from "motion/react";
+import { motion } from "motion/react";
 
 export default function SideNav() {
   const [isSideNavOpen, setIsSideNavOpen] = useState(false);
   const [activeSideNav, setActiveSideNav] = useState(0);
 
-  const flickerAnimation = {
-    display: 'none'
-  }
   const sideNavDelay = [ 0.2, 0.5, 0.3 ];
 
-  const sideNavItems = ['index', 'projects', 'contact'];
+  const sideNavItems = ['index', 'works', 'contact'];
 
   const activeAnimation = {
     backgroundColor: isSideNavOpen ? [ '#ffffff', '#000000', '#ffffff', '#000000', '#ffffff' ] : '#000000',
@@ -20,31 +17,25 @@ export default function SideNav() {
     backgroundColor: isSideNavOpen ? [ '#000000', '#ffffff', '#000000', '#ffffff', '#000000' ] : '#000000'
   };
 
-  const testBorder = 'border-[0.5px] border-solid border-red-500';
-
   const sideNavDivStyle = `
     flex flex-row place-items-center gap-x-3 px-1 rounded-[2px] text-center text-[10px] bg-black-900
     hover:cursor-pointer
   `;
 
-  const scrollY = useScroll();
+  const handleScroll = (id: string) => {
+    const pageElement = document.getElementById(id);
 
-  const scrollAnimation = {
-    scrollY: 30
-  }
+    console.log(pageElement);
 
-  const handleScroll = () => {
-    window.scroll({
-      top: 50,
-      behavior: 'smooth'
-    });
+    if (pageElement) {
+      pageElement.scrollIntoView({behavior: 'smooth', block: 'start'});
+    }
   }
 
   const circle = <div className={``}>{'o'}</div>;
 
   return (
     <div
-      id="side-nav-container"
       className="z-50 absolute top-[45%] left-[12px] flex flex-col"
     >
       <img
@@ -88,7 +79,7 @@ export default function SideNav() {
                 transition={{ delay: 0.1, opacity: { delay: 0.3 }}}
                 initial={{ display: 'none', opacity: 0 }}
                 animate={{ display: isSideNavOpen ? 'inline' : 'none', opacity: isSideNavOpen ? 1 : 0 }}
-                onClick={handleScroll}
+                onClick={ () => handleScroll(nav) }
               >
                 {nav}
               </motion.p>

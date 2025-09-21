@@ -15,16 +15,13 @@ export default function Work() {
     '/the_dreamer.jpeg', '/christmas_party.jpeg'
   ];
 
-  const testBorder = 'border-[0.5px] border-solid border-red-500';
-  const testGridStyle = `col-start-1 bg-black-800 w-full`;
-
   const mainSectionStyle = `
     w-full bg-radial from-black-900 to-black-930 rounded-lg grid grid-cols-8 gap-4 px-18 py-18
   `;
 
   return (
     <>
-      <div className={mainSectionStyle}>
+      <div className={mainSectionStyle} id="works">
         <div className={`absolute w-1/6 h-1/6 right-[5%] top-[10%] overflow-hidden`}>
           { bootcampPhotoList.map((photo, key) =>
             <div
