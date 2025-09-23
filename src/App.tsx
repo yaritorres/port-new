@@ -14,6 +14,7 @@ import PsychicOps from "./pages/artwork/graphic-art/PsychicOps";
 import OrangeLove from "./pages/artwork/graphic-art/OrangeLove";
 import TheDreamer from "./pages/artwork/graphic-art/TheDreamer";
 import ChristmasParty from "./pages/artwork/graphic-art/ChristmasParty";
+import PageTransition from "./components/PageTransition";
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
         <Route path="/ORANGE_LOVE" element={ <OrangeLove /> }/>
         <Route path="/THE_DREAMER" element={ <TheDreamer /> }/>
         <Route path="/CHRISTMAS_PARTY" element={ <ChristmasParty /> }/>
+        <Route path="/transition" element={ <PageTransition /> }/>
       </Routes>
     </Router>
   );
