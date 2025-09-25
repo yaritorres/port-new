@@ -1,10 +1,9 @@
 import { PowerGlitch } from 'powerglitch'
 import BottomCorners from "./utility/BottomCorners";
 import TopCorners from "./utility/TopCorners";
+import { useEffect } from 'react';
 
-export default function PageTransition({stasis}) {
-  PowerGlitch.glitch('.glitched', {playMode: 'always'});
-
+export default function PageTransition(props: { stasis: number; }) {
   const mainSectionStyle = `
     w-full h-full flex justify-center items-center bg-radial from-black-900 to-black-930 rounded-lg px-18 py-18 font-main
   `;
@@ -18,12 +17,16 @@ export default function PageTransition({stasis}) {
 
   const randomlyPickedText = transitionTextPool[Math.floor(Math.random() * transitionTextPool.length)]
 
+  useEffect(() => {
+    PowerGlitch.glitch('.glitched', {playMode: 'always'});
+  })
+
   return (
     <>
       <div
         className={`
           relative w-screen h-screen bg-black-950 rounded-lg inset-0 py-[48px] px-[12px] z-50 overflow-hidden text-black-50
-          ${ stasis ? '' : 'hidden' }
+          ${ props.stasis ? '' : 'hidden' }
         `}
       >
         <div

@@ -1,5 +1,6 @@
 import { motion } from "motion/react";
 import { Link } from "react-router";
+import { PowerGlitch } from "powerglitch";
 
 const bootcampProjectItems = ['atelier', 'duguid construction'];
 const bootcampProjectBlurbs = [
@@ -9,6 +10,13 @@ const bootcampProjectDates = ['2021', '2021'];
 const bootcampProjectLinks = ['atelier', 'duguid'];
 const bootcampProjectTech = [`[ react, next.js, vercel, tailwindCSS ]`, `[ react, next.js, vercel, tailwindCSS ]`];
 const projectItemStyle = `flex flex-col w-full gap-y-3 font-main`;
+
+const hoverGlitchOptions: object = {
+  playMode: 'hover',
+  timing: {duration: 1000},
+}
+
+PowerGlitch.glitch('.hover-glitch', hoverGlitchOptions);
 
 type BootcampProjectsProps = {
   setActiveBootcampPhotoList: (index: number) => void,
@@ -30,7 +38,7 @@ export default function BootcampProjects (props: BootcampProjectsProps) {
             <motion.div
               whileHover={{ borderBottom: '1px solid white', width: '100%' }}
               className={`
-                w-fit flex flex-row gap-x-2 items-center mb-1 hover:cursor-pointer
+                w-fit flex flex-row gap-x-2 items-center mb-1 hover:cursor-pointer hover-glitch
               `}
             >
               <Link to={bootcampProjectLinks[key]} className={`text-sm`}>{item}</Link>

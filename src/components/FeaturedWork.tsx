@@ -1,6 +1,20 @@
+import { PowerGlitch } from "powerglitch";
 import { useEffect, useState } from "react";
 
 export default function FeaturedWork() {
+  const hoverGlitchOptions: object = {
+    playMode: 'hover',
+    timing: {duration: 1000},
+  }
+
+  const glitchOptions: object = {
+    playMode: 'always',
+    timing: {duration: 2000},
+  }
+
+  PowerGlitch.glitch('.hover-glitch', hoverGlitchOptions);
+
+  PowerGlitch.glitch('.glitch', glitchOptions);
   const [activePhotoList, setActivePhotoList] = useState(0);
 
   const projectListItems = ['portfolio v.1', 'codeAndTell', 'atelier', 'duguid construction'];
@@ -33,27 +47,29 @@ export default function FeaturedWork() {
   return (
     <div id="index" className={mainSectionStyle}>
       <div className={`col-span-2 font-main text-xl col-start-1`}>
-        welcome to my portfolio. <br></br>
-        welcome to my portfolio. <br></br>
-        welcome to my portfolio. <br></br>
-        welcome to my portfolio. <br></br>
-        welcome to my portfolio. <br></br>
-        <p className="text-blorange">welcome to my portfolio.</p>
-        welcome to my portfolio. <br></br>
-        welcome to my portfolio. <br></br>
+        <div className="hover-glitch">
+          welcome to my portfolio. <br></br>
+          welcome to my portfolio. <br></br>
+          welcome to my portfolio. <br></br>
+          welcome to my portfolio. <br></br>
+          welcome to my portfolio. <br></br>
+          <p className="text-blorange">welcome to my portfolio.</p>
+          welcome to my portfolio. <br></br>
+          welcome to my portfolio. <br></br>
+        </div>
       </div>
       <div className={`col-span-3 row-span-2 col-start-6 row-start-2 overflow-hidden`}>
-        <p className="font-main text-lg mb-3"> {`[ FEATURED PROPAGANDA ]`} </p>
+        <p className="font-main text-lg mb-3 text-blorange"> {`[ FEATURED PROPAGANDA ]`} </p>
         { photoList.map((photo, key) =>
           <div
             key={key}
             className={`h-full ${ key === activePhotoList ? '' : 'hidden' }`}
           >
-            <img className={`object-cover w-full h-full`} src={photo}></img>
+            <img className={`object-cover w-full h-full glitch`} src={photo}></img>
           </div>
         )}
       </div>
-      <div className={`flex flex-col gap-y-3 col-span-2 row-span-1 col-start-4 row-start-3`}>
+      <div className={`flex flex-col gap-y-3 col-span-2 row-span-1 col-start-6 row-start-4`}>
         { projectListItems.map((nav, key) =>
           <div
             key={key}

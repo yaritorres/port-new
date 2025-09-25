@@ -54,6 +54,7 @@ export default function Work() {
             </div>
           )}
         </div>
+
         <h1 className={`col-start-3 col-span-2 text-base font-main`}> works </h1>
         <div className={`col-span-2 col-start-3 font-main`}>
           <div className="flex flex-row gap-x-3 items-center">
