@@ -1,15 +1,25 @@
+import { useEffect, useState } from 'react';
+import PageTransition from '../../../components/PageTransition';
 import SideNav from '../../../custom-ui/SideNav';
 
 export default function ChristmasParty() {
+  const [stasis, setStasis] = useState(2000);
   const mainSectionStyle = `
     w-full h-full bg-radial from-black-900 to-black-930 rounded-lg grid grid-cols-8 grid-rows-4 gap-4 px-18 py-18 font-main
   `;
 
+  useEffect(() => {
+    setTimeout(() => setStasis(0), stasis);
+
+  }, [stasis]);
+
   return (
     <>
+      <PageTransition stasis={stasis} />
       <div
         className={`
           relative w-screen h-screen bg-black-950 rounded-lg inset-0 py-[48px] px-[12px] z-50 overflow-hidden text-black-50
+          ${ stasis ? 'hidden' : '' }
         `}
       >
         <div

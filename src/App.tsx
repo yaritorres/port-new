@@ -2,7 +2,6 @@ import {
   BrowserRouter as Router,
   Routes,
   Route,
-  Navigate,
 } from "react-router";
 import Index from './pages/Index';
 import Atelier from './pages/projects/bootcamp/Atelier';
