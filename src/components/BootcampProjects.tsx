@@ -24,7 +24,7 @@ type BootcampProjectsProps = {
 
 export default function BootcampProjects (props: BootcampProjectsProps) {
   return (
-    <div className={`col-span-3 col-start-4 font-main`}>
+    <div className={`md:col-start-2 lg:col-start-4 col-span-3 font-main`}>
       <div
         className={`${projectItemStyle}`}
       >

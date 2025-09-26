@@ -29,7 +29,9 @@ export default function FeaturedWork() {
   ]
   const photoList = ['public/portfolio-v1.png', 'public/codeAndTell.png', 'public/royalepage.gif', 'public/duguid.gif'];
 
-  const mainSectionStyle = `w-full h-full bg-radial from-black-900 to-black-930 rounded-lg grid grid-cols-8 grid-rows-4 gap-4 px-18 py-18`;
+  const mainSectionStyle = `
+    w-full min-h-screen md:h-full bg-radial from-black-900 to-black-930 rounded-lg md:grid grid-cols-8 grid-rows-4 gap-4 p-6 md:p-18
+  `;
   const projectItemStyle = `flex flex-col w-full h-full gap-y-1 font-main`;
 
   useEffect(() => {
@@ -47,7 +49,7 @@ export default function FeaturedWork() {
   return (
     <div id="index" className={mainSectionStyle}>
       <div className={`col-span-2 font-main text-xl col-start-1`}>
-        <div className="hover-glitch">
+        <div className="hover-glitch mb-6 md:m-0">
           welcome to my portfolio. <br></br>
           welcome to my portfolio. <br></br>
           welcome to my portfolio. <br></br>
@@ -58,7 +60,7 @@ export default function FeaturedWork() {
           welcome to my portfolio. <br></br>
         </div>
       </div>
-      <div className={`col-span-3 row-span-2 col-start-6 row-start-2 overflow-hidden`}>
+      <div className={`col-span-3 row-span-2 col-start-6 row-start-2 overflow-hidden mb-6 md:m-0`}>
         <p className="font-main text-lg mb-3 text-blorange"> {`[ FEATURED PROPAGANDA ]`} </p>
         { photoList.map((photo, key) =>
           <div

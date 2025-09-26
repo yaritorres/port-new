@@ -1,4 +1,5 @@
 import { motion } from "motion/react";
+import { PowerGlitch } from "powerglitch";
 import { Link } from "react-router";
 
 const graphicArtItems = ['[ RATWARE_CORP ]', '[ PSYCHIC_OPS ]', '[ ORANGE_LOVE ]', '[ THE_DREAMER ]', '[ CHRISTMAS_PARTY ]'];
@@ -18,9 +19,16 @@ type GraphicArtProps = {
   setActiveGraphicPhotoList: (index: number) => void,
 }
 
+const hoverGlitchOptions: object = {
+  playMode: 'hover',
+  timing: {duration: 1000},
+}
+
+PowerGlitch.glitch('.hover-glitch', hoverGlitchOptions);
+
 export default function Artwork (props: GraphicArtProps) {
   return (
-    <div className={`col-span-3 col-start-4 font-main`}>
+    <div className={`md:col-start-2 lg:col-start-4 col-span-3 font-main`}>
       <div
         className={`${projectItemStyle}`}
       >
@@ -34,7 +42,7 @@ export default function Artwork (props: GraphicArtProps) {
             <motion.div
               whileHover={{ borderBottom: '1px solid white', width: '100%' }}
               className={`
-                w-fit flex flex-row gap-x-2 items-center mb-1 hover:cursor-pointer
+                w-fit flex flex-row gap-x-2 items-center mb-1 hover:cursor-pointer hover-glitch
               `}
             >
               <Link to={graphicArtLinks[key]} className={`text-sm`}>{item}</Link >

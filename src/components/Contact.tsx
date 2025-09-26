@@ -17,7 +17,7 @@ export default function Contact() {
   ];
 
   const mainSectionStyle = `
-    w-full h-full rounded-lg grid grid-cols-8 grid-rows-4 gap-4 px-18 py-18 bg-radial from-black-900 to-black-930
+    w-full h-full bg-radial from-black-900 to-black-930 rounded-lg md:grid grid-cols-8 grid-rows-4 gap-4 p-6 md:p-18
   `;
 
   return (
@@ -35,14 +35,15 @@ export default function Contact() {
       </motion.div>
       <div
         className={`
-          flex flex-row items-center gap-x-20 col-start-4 row-start-2 col-span-5 font-main text-[80px] ${ isPdfOpen ? 'opacity-10' : '' }
+          flex flex-row items-center gap-x-6 md:gap-x-20 col-start-4 row-start-2 col-span-5 font-main text-[30px] md:text-[80px] mb-6 md:m-0
+          ${ isPdfOpen ? 'opacity-10' : '' }
         `}
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 300 300"
           xmlSpace="preserve"
-          className="w-[50px] h-[50px] rotate-45"
+          className="w-[15px] h-[15px] md:w-[50px] md:h-[50px] rotate-45"
         >
           <path className="fill-blorange" d="M.02 0v39.49h229.91L0 269.42 30.58 300 260.51 70.07v229.91H300V0z"/>
         </svg>

@@ -36,7 +36,7 @@ export default function SideNav() {
 
   return (
     <div
-      className="z-50 absolute top-[45%] left-[12px] flex flex-col"
+      className="z-50 absolute top-[45%] left-[12px] hidden md:flex flex-col"
     >
       <img
         id="corner-top"

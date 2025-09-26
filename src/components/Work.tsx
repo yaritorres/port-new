@@ -16,7 +16,7 @@ export default function Work() {
   ];
 
   const mainSectionStyle = `
-    w-full bg-radial from-black-900 to-black-930 rounded-lg grid grid-cols-8 gap-4 px-18 py-18
+    w-full bg-radial from-black-900 to-black-930 rounded-lg md:grid md:grid-cols-4 lg:grid-cols-8 gap-4 p-6 md:p-18
   `;
 
   return (
@@ -55,8 +55,8 @@ export default function Work() {
           )}
         </div>
 
-        <h1 className={`col-start-3 col-span-2 text-base font-main`}> works </h1>
-        <div className={`col-span-2 col-start-3 font-main`}>
+        <h1 className={`md:col-start-1 lg:col-start-3 col-span-2 text-base font-main`}> works </h1>
+        <div className={`md:col-start-1 lg:col-start-3 col-span-2 font-main`}>
           <div className="flex flex-row gap-x-3 items-center">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -68,14 +68,14 @@ export default function Work() {
             </svg>
             <h2 className="text-2xl"> web design </h2>
           </div>
-          <h3 className="text-base indent-12"> bootcamp projects </h3>
+          <h3 className="text-blorange text-base md:indent-12"> bootcamp projects </h3>
         </div>
         <BootcampProjects setActiveBootcampPhotoList={setActiveBootcampPhotoList} />
 
-        <h3 className={`col-span-2 col-start-3 indent-12 text-base font-main`}> personal projects </h3>
+        <h3 className={`md:col-start-1 lg:col-start-3 col-span-2 md:indent-12 text-blorange text-base font-main`}> personal projects </h3>
         <PersonalProjects setActivePersonalPhotoList={setActivePersonalPhotoList}/>
 
-        <div className={`col-span-2 col-start-3 font-main`}>
+        <div className={`md:col-start-1 lg:col-start-3 col-span-2 font-main`}>
           <div className="flex flex-row gap-x-3 items-center">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -87,7 +87,7 @@ export default function Work() {
             </svg>
             <h2 className="text-2xl"> artwork </h2>
           </div>
-          <h3 className="text-base indent-12"> graphic art </h3>
+          <h3 className="text-blorange text-base md:indent-12"> graphic art </h3>
         </div>
         <Artwork setActiveGraphicPhotoList={setActiveGraphicPhotoList}/>
       </div>
