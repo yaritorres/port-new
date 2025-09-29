@@ -4,9 +4,8 @@ import { Link } from "react-router";
 
 const graphicArtItems = ['[ RATWARE_CORP ]', '[ PSYCHIC_OPS ]', '[ ORANGE_LOVE ]', '[ THE_DREAMER ]', '[ CHRISTMAS_PARTY ]'];
 const graphicArtBlurbs = [
-  'business card size graphic art made in illustrator', 'business card size graphic art made in illustrator',
-  'business card size graphic art made in illustrator', 'business card size graphic art made in illustrator',
-  'business card size graphic art made in illustrator'
+  'graphic art made in illustrator', 'graphic art made in illustrator', 'graphic art made in illustrator',
+  'graphic art made in illustrator', 'graphic art made in illustrator'
 ];
 const graphicArtDates = ['2025', '2025', '2025', '2025', '2025'];
 const graphicArtLinks = ['RATWARE_CORP', 'PSYCHIC_OPS', 'ORANGE_LOVE', 'THE_DREAMER', 'CHRISTMAS_PARTY'];

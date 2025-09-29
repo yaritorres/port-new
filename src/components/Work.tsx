@@ -2,14 +2,14 @@ import { useState } from "react";
 import BootcampProjects from "./BootcampProjects";
 import PersonalProjects from "./PersonalProjects";
 import Artwork from "./Artwork";
+import BootcampPhotoList from "./BootcampPhotoList";
+import PersonalProjectsPhotoList from "./PersonalProjectsPhotoList";
 
 export default function Work() {
   const [activeBootcampPhotoList, setActiveBootcampPhotoList] = useState(-1);
   const [activePersonalPhotoList, setActivePersonalPhotoList] = useState(-1);
   const [activeGraphicPhotoList, setActiveGraphicPhotoList] = useState(-1);
 
-  const bootcampPhotoList = ['/royalepage.gif', '/duguid.gif'];
-  const personalPhotoList = ['/portfolio-v1.png', '/codeAndTell.png'];
   const graphicPhotoList = [
     '/RATWARE_CORP.jpeg', '/psychic_ops.jpeg', '/orange_love.jpeg',
     '/the_dreamer.jpeg', '/christmas_party.jpeg'
@@ -22,27 +22,8 @@ export default function Work() {
   return (
     <>
       <div className={mainSectionStyle} id="works">
-        <div className={`absolute w-1/6 h-1/6 right-[5%] top-[10%] overflow-hidden`}>
-          { bootcampPhotoList.map((photo, key) =>
-            <div
-              key={key}
-              className={`h-full ${ key === activeBootcampPhotoList ? '' : 'hidden' }`}
-            >
-              <img className={`object-cover w-full h-full`} src={photo}></img>
-            </div>
-          )}
-        </div>
-
-        <div className={`absolute w-1/6 h-1/6 right-[5%] top-[10%] overflow-hidden`}>
-          { personalPhotoList.map((photo, key) =>
-            <div
-              key={key}
-              className={`h-full ${ key === activePersonalPhotoList ? '' : 'hidden' }`}
-            >
-              <img className={`object-cover w-full h-full`} src={photo}></img>
-            </div>
-          )}
-        </div>
+        <BootcampPhotoList activeBootcampPhotoList={activeBootcampPhotoList} />
+        <PersonalProjectsPhotoList activePersonalPhotoList={activePersonalPhotoList}/>
 
         <div className={`absolute w-1/6 h-1/6 right-[5%] top-[10%] overflow-hidden`}>
           { graphicPhotoList.map((photo, key) =>
