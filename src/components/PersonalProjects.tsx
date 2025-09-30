@@ -52,7 +52,7 @@ export default function PersonalProjects (props: PersonalProjectsProps) {
               </svg>
             </motion.div>
             <p className={`text-xs`}>{personalProjectBlurbs[key]}</p>
-            <p className={`text-[10px]`}>{personalProjectTech[key]}</p>
+            <p className={`text-[10px] text-blorange`}>{personalProjectTech[key]}</p>
             <p className={`text-[10px]`}>{personalProjectDates[key]}</p>
           </div>
         )}

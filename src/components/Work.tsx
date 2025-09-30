@@ -4,16 +4,12 @@ import PersonalProjects from "./PersonalProjects";
 import Artwork from "./Artwork";
 import BootcampPhotoList from "./BootcampPhotoList";
 import PersonalProjectsPhotoList from "./PersonalProjectsPhotoList";
+import GraphicPhotoList from "./GraphicPhotoList";
 
 export default function Work() {
   const [activeBootcampPhotoList, setActiveBootcampPhotoList] = useState(-1);
   const [activePersonalPhotoList, setActivePersonalPhotoList] = useState(-1);
   const [activeGraphicPhotoList, setActiveGraphicPhotoList] = useState(-1);
-
-  const graphicPhotoList = [
-    '/RATWARE_CORP.jpeg', '/psychic_ops.jpeg', '/orange_love.jpeg',
-    '/the_dreamer.jpeg', '/christmas_party.jpeg'
-  ];
 
   const mainSectionStyle = `
     w-full bg-radial from-black-900 to-black-930 rounded-lg md:grid md:grid-cols-4 lg:grid-cols-8 gap-4 p-6 md:p-18
@@ -23,18 +19,8 @@ export default function Work() {
     <>
       <div className={mainSectionStyle} id="works">
         <BootcampPhotoList activeBootcampPhotoList={activeBootcampPhotoList} />
-        <PersonalProjectsPhotoList activePersonalPhotoList={activePersonalPhotoList}/>
-
-        <div className={`absolute w-1/6 h-1/6 right-[5%] top-[10%] overflow-hidden`}>
-          { graphicPhotoList.map((photo, key) =>
-            <div
-              key={key}
-              className={`h-full ${ key === activeGraphicPhotoList ? '' : 'hidden' }`}
-            >
-              <img className={`object-cover w-full h-full`} src={photo}></img>
-            </div>
-          )}
-        </div>
+        <PersonalProjectsPhotoList activePersonalPhotoList={activePersonalPhotoList} />
+        <GraphicPhotoList activeGraphicPhotoList={activeGraphicPhotoList} />
 
         <h1 className={`md:col-start-1 lg:col-start-3 col-span-2 text-base font-main`}> works </h1>
         <div className={`md:col-start-1 lg:col-start-3 col-span-2 font-main`}>

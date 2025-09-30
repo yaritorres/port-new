@@ -1,23 +1,21 @@
-import { useEffect, useState } from "react";
 import PageTransition from "./components/PageTransition";
 import TopCorners from "./components/utility/TopCorners";
 import BottomCorners from "./components/utility/BottomCorners";
+import { useEffect, useState } from "react";
 
 export default function LayoutDefault(props: {children: React.ReactNode}) {
-  const [stasis, setStasis] = useState(2000)
+  const [ inView, setInView] = useState(true);
 
-  useEffect(() => {
-    setTimeout(() => setStasis(0), stasis);
-
-  }, [stasis]);
+  // useEffect(() => {
+  //   setInView(true);
+  // }, [setInView])
 
   return (
     <>
-      <PageTransition stasis={stasis} />
+      <PageTransition inView={inView} setInView={setInView} />
       <div
         className={`
           relative w-screen h-screen bg-black-950 rounded-lg inset-0 py-[48px] px-[12px] z-50 overflow-hidden text-black-50
-          ${ stasis ? 'hidden' : '' }
         `}
       >
         <div

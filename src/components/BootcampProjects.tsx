@@ -52,7 +52,7 @@ export default function BootcampProjects (props: BootcampProjectsProps) {
               </svg>
             </motion.div>
             <p className={`text-xs`}>{bootcampProjectBlurbs[key]}</p>
-            <p className={`text-[10px]`}>{bootcampProjectTech[key]}</p>
+            <p className={`text-[10px] text-blorange`}>{bootcampProjectTech[key]}</p>
             <p className={`text-[10px]`}>{bootcampProjectDates[key]}</p>
           </div>
         )}

@@ -55,7 +55,7 @@ export default function Artwork (props: GraphicArtProps) {
               </svg>
             </motion.div>
             <p className={`text-xs`}>{graphicArtBlurbs[key]}</p>
-            <p className={`text-[10px]`}>{graphicArtTech[key]}</p>
+            <p className={`text-[10px] text-blorange`}>{graphicArtTech[key]}</p>
             <p className={`text-[10px]`}>{graphicArtDates[key]}</p>
           </div>
         )}
