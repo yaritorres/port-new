@@ -48,7 +48,7 @@ export default function FeaturedWork() {
 
   return (
     <div id="index" className={mainSectionStyle}>
-      <div className={`col-span-2 font-main text-xl col-start-1`}>
+      <div className={`col-span-2 font-main text-lg col-start-1`}>
         <div className="hover-glitch mb-6 md:m-0">
           welcome to my portfolio. <br></br>
           welcome to my portfolio. <br></br>
@@ -71,7 +71,7 @@ export default function FeaturedWork() {
           </div>
         )}
       </div>
-      <div className={`flex flex-col gap-y-3 col-span-2 row-span-1 col-start-6 row-start-4`}>
+      <div className={`flex flex-col gap-y-3 col-span-3 row-span-1 col-start-6 row-start-4`}>
         { projectListItems.map((nav, key) =>
           <div
             key={key}

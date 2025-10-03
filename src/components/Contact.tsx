@@ -1,4 +1,5 @@
 import { motion } from "motion/react"
+import { PowerGlitch } from "powerglitch";
 import { useState } from "react";
 
 export default function Contact() {
@@ -19,6 +20,13 @@ export default function Contact() {
   const mainSectionStyle = `
     w-full h-full bg-radial from-black-900 to-black-930 rounded-lg md:grid grid-cols-8 grid-rows-4 gap-4 p-6 md:p-18
   `;
+
+  const hoverGlitchOptions: object = {
+    playMode: 'hover',
+    timing: { duration: 1000 },
+  }
+
+  PowerGlitch.glitch('.hover-glitch', hoverGlitchOptions);
 
   return (
     <motion.div
@@ -54,7 +62,7 @@ export default function Contact() {
       >
         <motion.div
           whileHover={{ borderBottom: '1px solid white', width: '100%' }}
-          className='w-fit flex flex-row gap-x-3 items-center hover:cursor-pointer'
+          className='w-fit flex flex-row gap-x-3 items-center hover:cursor-pointer hover-glitch'
           onClick={() => setIsPdfOpen(true)}
         >
           <p className="font-main text-lg text-white">
@@ -73,7 +81,7 @@ export default function Contact() {
           <motion.div
             key={key}
             whileHover={{ borderBottom: '1px solid white', width: '100%' }}
-            className='w-fit flex flex-row gap-x-3 items-center'
+            className='w-fit flex flex-row gap-x-3 items-center hover-glitch'
           >
             <a
               href={contactLinks[key]}

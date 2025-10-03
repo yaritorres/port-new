@@ -1,12 +1,12 @@
 import { PowerGlitch } from 'powerglitch'
-import BottomCorners from "./utility/BottomCorners";
-import TopCorners from "./utility/TopCorners";
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
+import BottomCorners from './utility/BottomCorners';
+import TopCorners from './utility/TopCorners';
 
 export default function PageTransition({ inView, setInView }) {
   const mainSectionStyle = `
-    w-full h-full flex justify-center items-center bg-radial from-black-900 to-black-930 rounded-lg px-18 py-18 font-main
-    animate-fadeOut
+    w-full h-full flex justify-center items-center bg-radial from-black-900 to-black-930 rounded-lg p-6 font-main
+    animate-fadeOut ${ inView ? '' : 'hidden' }
   `;
 
   const transitionTextPool: Array<string> = [
@@ -26,7 +26,7 @@ export default function PageTransition({ inView, setInView }) {
     <>
       <div
         className={`
-          relative w-screen h-screen bg-black-950 rounded-lg inset-0 py-[48px] px-[12px] z-50 overflow-hidden text-black-50
+          absolute w-screen h-screen bg-black-950 rounded-lg inset-0 py-[48px] px-[12px] z-50 overflow-hidden text-black-50
           ${ inView ? '' : 'hidden' }
         `}
       >
@@ -36,13 +36,13 @@ export default function PageTransition({ inView, setInView }) {
             bg-[url(/grain_background.png)] z-10 animate-grain
           `}
         />
-        <TopCorners />
-        <BottomCorners />
-        <div className={mainSectionStyle} onAnimationEnd={() => { setInView(false)}}>
+        <div className={mainSectionStyle} onAnimationEnd={() => { setInView(false) }}>
           <p className="text-blorange"> {`[`} &nbsp; </p>
           <p className="w-content glitched"> {randomlyPickedText} </p>
           <p className="text-blorange"> &nbsp; {`]`} </p>
         </div>
+      <TopCorners />
+      <BottomCorners />
       </div>
     </>
   );

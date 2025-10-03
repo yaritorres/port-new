@@ -17,22 +17,22 @@ import LayoutDefault from "./layout";
 
 function App() {
   return (
-    <LayoutDefault>
-      <Router>
-        <Routes>
-            <Route path="/" element={ <Index /> }/>
-            <Route path="/atelier" element={ <Atelier /> }/>
-            <Route path="/duguid" element={ <Duguid /> }/>
-            <Route path="/codeAndTell" element={ <CodeAndTell /> }/>
-            <Route path="/portfolio-v1" element={ <PortfolioVersionOne /> }/>
-            <Route path="/RATWARE_CORP" element={ <RatwareCorp /> }/>
-            <Route path="/PSYCHIC_OPS" element={ <PsychicOps /> }/>
-            <Route path="/ORANGE_LOVE" element={ <OrangeLove /> }/>
-            <Route path="/THE_DREAMER" element={ <TheDreamer /> }/>
-            <Route path="/CHRISTMAS_PARTY" element={ <ChristmasParty /> }/>
-        </Routes>
+    <Router>
+        <LayoutDefault>
+          <Routes>
+              <Route path="/" element={ <Index /> }/>
+              <Route path="/atelier" element={ <Atelier /> }/>
+              <Route path="/duguid" element={ <Duguid /> }/>
+              <Route path="/codeAndTell" element={ <CodeAndTell /> }/>
+              <Route path="/portfolio-v1" element={ <PortfolioVersionOne /> }/>
+              <Route path="/RATWARE_CORP" element={ <RatwareCorp /> }/>
+              <Route path="/PSYCHIC_OPS" element={ <PsychicOps /> }/>
+              <Route path="/ORANGE_LOVE" element={ <OrangeLove /> }/>
+              <Route path="/THE_DREAMER" element={ <TheDreamer /> }/>
+              <Route path="/CHRISTMAS_PARTY" element={ <ChristmasParty /> }/>
+          </Routes>
+        </LayoutDefault>
       </Router>
-    </LayoutDefault>
   );
 }
 
