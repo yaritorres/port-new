@@ -3,6 +3,7 @@ import {
   Routes,
   Route,
 } from "react-router";
+import LayoutDefault from "./layout";
 import Index from './pages/Index';
 import Atelier from './pages/projects/bootcamp/Atelier';
 import Duguid from "./pages/projects/bootcamp/Duguid";
@@ -13,7 +14,7 @@ import PsychicOps from "./pages/artwork/graphic-art/PsychicOps";
 import OrangeLove from "./pages/artwork/graphic-art/OrangeLove";
 import TheDreamer from "./pages/artwork/graphic-art/TheDreamer";
 import ChristmasParty from "./pages/artwork/graphic-art/ChristmasParty";
-import LayoutDefault from "./layout";
+import Resume from "./pages/Resume";
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
               <Route path="/ORANGE_LOVE" element={ <OrangeLove /> }/>
               <Route path="/THE_DREAMER" element={ <TheDreamer /> }/>
               <Route path="/CHRISTMAS_PARTY" element={ <ChristmasParty /> }/>
+              <Route path="/resume" element={ <Resume /> }/>
           </Routes>
         </LayoutDefault>
       </Router>

@@ -5,6 +5,7 @@ import Artwork from "./Artwork";
 import BootcampPhotoList from "./BootcampPhotoList";
 import PersonalProjectsPhotoList from "./PersonalProjectsPhotoList";
 import GraphicPhotoList from "./GraphicPhotoList";
+import Contact from "./Contact";
 
 export default function Work() {
   const [activeBootcampPhotoList, setActiveBootcampPhotoList] = useState(-1);
@@ -12,7 +13,7 @@ export default function Work() {
   const [activeGraphicPhotoList, setActiveGraphicPhotoList] = useState(-1);
 
   const mainSectionStyle = `
-    w-full bg-radial from-black-900 to-black-930 rounded-lg md:grid md:grid-cols-4 lg:grid-cols-8 gap-4 p-6 md:p-18
+    w-full bg-radial from-black-900 to-black-930 rounded-lg flex flex-col md:grid md:grid-cols-4 lg:grid-cols-8 gap-4 p-6 md:p-18
   `;
 
   return (
@@ -57,7 +58,15 @@ export default function Work() {
           <h3 className="text-blorange text-base md:indent-12"> graphic art </h3>
         </div>
         <Artwork setActiveGraphicPhotoList={setActiveGraphicPhotoList}/>
+        <h3 className={`md:col-start-1 lg:col-start-3 col-span-2 md:indent-12 text-blorange text-base font-main`}> written work </h3>
+
+        <h1 className={`md:col-start-1 lg:col-start-3 col-span-2 text-base font-main`}> contact </h1>
+        <h3 className={`md:col-start-1 lg:col-start-3 col-span-3 md:indent-12 text-blorange text-base font-main`}>
+          {`[ currently seeking new opportunities! ]`}
+        </h3>
+        <Contact />
       </div>
+
     </>
   )
 }
