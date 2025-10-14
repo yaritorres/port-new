@@ -15,6 +15,9 @@ export default function Resume() {
   const companyNamesColOne = [`working for you!`, 'Air A Med', `Physician's Primary Care`];
   const companyNamesColTwo = ['Lee County EMS', 'Ambitrans', 'Home Depot'];
 
+  const jobTitleColOne = ['Software Engineer', 'Office Assistant/Order Entry', 'Front Desk Receptionist']
+  const jobTitleColTwo = ['EMT', 'EMT', 'Cashier']
+
   const jobDescriptionColOne = [
     `i'm always seeking new opportunities to expand my skillset and grow as an engineer. i don't have a traditional background but i'm passionate and want to work alongside similarly driven people. i want to build something that means something. you can download my resume above and find my contact information there. thank you for having a look at this portfolio!`,
 
@@ -25,8 +28,8 @@ export default function Resume() {
   ];
   const jobDescriptionColTwo = [
     `i am proud to have worked as an EMT for Lee County EMS, serving alongside a paramedic on ALS ambulances or another EMT on BLS ambulances. i perfomed different tasks, namely, responding in a timely manner to 911 calls and providing excellent patient care alongside my partner. during and after patient contact, i effectively recorded patient information and reported on events during the call, sharing information with hospital staff as required for quick and easy patient transfer. i also maintained a clean and orderly truck and station, replenishing supplies and cleaning as needed.`,
-    ``,
-    ``
+    `this was my first job as an EMT, fresh out of school. i transported patients from different facilities, usually from nursing homes to hospitals or vice-versa. i kept patient records during transport and facilitated their transfers. i also maintained the truck alongside my EMT partner, cleaning and replenishing supplies as needed.`,
+    `this was where i worked while going through EMT school! i was on the closing shift and did what cashiers typically do, providing excellent customer service and maintaining a clean workspace, as well as following closing protocols and assisting where necessary, either with customer needs or team needs.`
   ];
 
   const jobDatesColOne = [`[ hopefully soon! ]`, `[ 2024 - Present ]`, `[ 2023 - 2024 ]`];
@@ -38,7 +41,7 @@ export default function Resume() {
   return (
     <>
       <div className={mainSectionStyle}>
-        <div className='col-span-3 flex flex-row items-center'>
+        <div className='col-span-4 flex flex-row items-center'>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 300 300"
@@ -47,7 +50,7 @@ export default function Resume() {
           >
             <path className="fill-blorange" d="M.02 0v39.49h229.91L0 269.42 30.58 300 260.51 70.07v229.91H300V0z"/>
           </svg>
-          <div className="flex flex-row">
+          <div className="w-full flex flex-row">
             <h1 className="ml-6 md:ml-10"> resume </h1>
             <a
               className="text-xs text-blorange hover-glitch place-self-end"
@@ -67,13 +70,8 @@ export default function Resume() {
               key={key}
               className={`flex flex-col gap-y-3 select-none`}
             >
-              <div
-                className={`
-                  w-full hover:cursor-pointer hover-glitch
-                `}
-              >
-                <h2 className={`text-blorange text-[24px]`}>{company}</h2 >
-              </div>
+              <h2 className={`text-blorange text-[24px] hover-glitch`}>{company}</h2 >
+              <p className="text-xs"> {`[ ${jobTitleColOne[key]} ]`} </p>
               <p className={`text-sm`}>{jobDescriptionColOne[key]}</p>
               <p className={`text-blorange text-xs flex justify-end`}>{jobDatesColOne[key]}</p>
             </div>
@@ -88,13 +86,8 @@ export default function Resume() {
               key={key}
               className={`flex flex-col gap-y-3 select-none`}
             >
-              <div
-                className={`
-                  w-full hover:cursor-pointer hover-glitch
-                `}
-              >
-                <h2 className={`text-blorange text-[24px]`}>{company}</h2 >
-              </div>
+              <h2 className={`text-blorange text-[24px] hover-glitch`}>{company}</h2>
+              <p className="text-xs"> {`[ ${jobTitleColTwo[key]} ]`} </p>
               <p className={`text-sm`}>{jobDescriptionColTwo[key]}</p>
               <p className={`text-blorange text-xs flex justify-end`}>{jobDatesColTwo[key]}</p>
             </div>
