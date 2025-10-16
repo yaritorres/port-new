@@ -2,7 +2,7 @@ import SideNav from '../../../custom-ui/SideNav';
 
 export default function Atelier() {
   const mainSectionStyle = `
-    w-full h-full bg-radial from-black-900 to-black-930 rounded-lg flex flex-col gap-y-6 md:grid grid-cols-8 grid-rows-4 gap-4 p-6 md:p-18 font-main
+    w-full h-full bg-radial from-black-900 to-black-930 rounded-lg flex flex-col gap-y-6 lg:grid grid-cols-8 grid-rows-4 gap-4 p-6 md:p-18 font-main
   `;
 
   return (
@@ -23,7 +23,7 @@ export default function Atelier() {
           src="public/royalepage.gif"
           className={`col-start-5 col-span-3 row-span-2 w-full`}
         />
-        <div className={`flex flex-col gap-y-3 col-span-4 col-start-5 row-start-3 text-xs`}>
+        <div className={`flex flex-col gap-y-3 col-span-4 col-start-5 row-start-3 md:text-lg lg:text-xs`}>
           <p> my first foray into React during my time in the Hack Reactor bootcamp. </p>
           <p> i worked alongside two other wonderful engineers to develop a mock e-commerce site that we named Royale. </p>
           <p> everything was styled in plain CSS and deployed on AWS. </p>
@@ -31,7 +31,7 @@ export default function Atelier() {
           <p> most importantly, we remembered to have fun. </p>
         </div>
       </div>
-      <SideNav />
+      {/* <SideNav /> */}
     </>
   );
 }

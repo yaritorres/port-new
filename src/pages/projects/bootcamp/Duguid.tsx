@@ -2,7 +2,7 @@ import SideNav from '../../../custom-ui/SideNav';
 
 export default function Duguid() {
   const mainSectionStyle = `
-    w-full h-full bg-radial from-black-900 to-black-930 rounded-lg flex flex-col gap-y-6 md:grid grid-cols-8 grid-rows-4 gap-4 p-6 md:p-18 font-main
+    w-full h-full bg-radial from-black-900 to-black-930 rounded-lg flex flex-col gap-y-6 xl:grid grid-cols-8 grid-rows-4 gap-4 p-6 md:p-18 font-main overflow-scroll
   `;
 
   return (
@@ -23,7 +23,7 @@ export default function Duguid() {
           src="public/duguid.gif"
           className={`col-start-5 col-span-3 row-span-2 w-full`}
         />
-        <div className={`flex flex-col gap-y-3 col-span-4 col-start-5 row-start-3 text-xs`}>
+        <div className={`flex flex-col gap-y-3 col-span-4 col-start-5 row-start-3 xl:text-xs`}>
           <p> the final project of the Hack Reactor bootcamp. </p>
           <p>
             this project saw me and 4 other engineers meet with a "client" to discuss a revamp of their construction company&apos;s website.
@@ -37,7 +37,7 @@ export default function Duguid() {
           <p> and we presented it in front of the whole class. it went great. </p>
         </div>
       </div>
-      <SideNav />
+      {/* <SideNav /> */}
     </>
   );
 }

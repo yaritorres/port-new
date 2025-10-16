@@ -24,7 +24,7 @@ export default function Work() {
         <GraphicPhotoList activeGraphicPhotoList={activeGraphicPhotoList} />
 
         <h1 className={`md:col-start-1 lg:col-start-3 col-span-2 text-base font-main`}> works </h1>
-        <div className={`md:col-start-1 lg:col-start-3 col-span-2 font-main`}>
+        <div className={`md:col-start-1 lg:col-start-3 col-span-full font-main`}>
           <div className="flex flex-row gap-x-3 items-center">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -40,7 +40,7 @@ export default function Work() {
         </div>
         <BootcampProjects setActiveBootcampPhotoList={setActiveBootcampPhotoList} />
 
-        <h3 className={`md:col-start-1 lg:col-start-3 col-span-2 md:indent-12 text-blorange text-base font-main`}> personal projects </h3>
+        <h3 className={`md:col-start-1 lg:col-start-3 col-span-full md:indent-12 text-blorange text-base font-main`}> personal projects </h3>
         <PersonalProjects setActivePersonalPhotoList={setActivePersonalPhotoList}/>
 
         <div className={`md:col-start-1 lg:col-start-3 col-span-2 font-main`}>
@@ -61,7 +61,7 @@ export default function Work() {
         <h3 className={`md:col-start-1 lg:col-start-3 col-span-2 md:indent-12 text-blorange text-base font-main`}> written work </h3>
 
         <h1 className={`md:col-start-1 lg:col-start-3 col-span-2 text-base font-main`}> contact </h1>
-        <h3 className={`md:col-start-1 lg:col-start-3 col-span-3 md:indent-12 text-blorange text-base font-main`}>
+        <h3 className={`md:col-start-1 lg:col-start-3 col-span-full md:indent-12 text-blorange text-base font-main`}>
           {`[ currently seeking new opportunities! ]`}
         </h3>
         <Contact />

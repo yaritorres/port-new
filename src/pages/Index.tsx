@@ -11,7 +11,7 @@ function Index() {
         <FeaturedWork />
         <Work />
       </div>
-      <SideNav />
+      {/* <SideNav /> */}
     </>
   );
 }
