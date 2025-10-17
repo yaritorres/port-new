@@ -54,7 +54,7 @@ export default function Resume() {
             <h1 className="ml-6 md:ml-10"> resume </h1>
             <a
               className="text-xs text-blorange hover-glitch place-self-end"
-              href="public/Yari Torres Nicola Resume.pdf"
+              href="../Yari Torres Nicola Resume.pdf"
               rel="noreferrer"
               target="_blank"
             >
