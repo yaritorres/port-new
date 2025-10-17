@@ -26,8 +26,8 @@ export default function TheDreamer() {
         <div className={`flex flex-col gap-y-3 col-span-4 col-start-5 row-start-3 text-xs`}>
           <p> one of the graphic art pieces i made around my idea for an ostensibly good mega corporation. </p>
           <p> business card sized {`(8.89 x 5.1 cm)`} and created using Adobe Illustrator. </p>
-          <div className='flex flex-row'>
-            <p> a display of nueral manipulation technology created by the&nbsp; </p>
+          <div className='flex flex-col md:flex-row'>
+            <p> a display of nueral manipulation technology created by the&nbsp;</p>
             <p className='text-blorange flex flex-row'> RATWARE CORPORATION <p className='text-white'>.</p></p>
           </div>
           <p> the barcodes can be scanned to reveal a string of text. </p>

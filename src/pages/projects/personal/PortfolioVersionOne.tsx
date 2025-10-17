@@ -17,7 +17,7 @@ export default function PortfolioVersionOne() {
           >
             <path className="fill-blorange" d="M.02 0v39.49h229.91L0 269.42 30.58 300 260.51 70.07v229.91H300V0z"/>
           </svg>
-          <h1 className='text-[40px]! md:text-base'> portfolio v.1 </h1>
+          <h2 className='text-3xl md:5xl'> portfolio v.1 </h2>
         </div>
         <img
           src="public/portfolio-v1.png"

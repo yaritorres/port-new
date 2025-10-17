@@ -13,7 +13,7 @@ export default function Work() {
   const [activeGraphicPhotoList, setActiveGraphicPhotoList] = useState(-1);
 
   const mainSectionStyle = `
-    w-full bg-radial from-black-900 to-black-930 rounded-lg flex flex-col md:grid md:grid-cols-4 lg:grid-cols-8 gap-4 p-6 md:p-18
+    w-full bg-radial from-black-900 to-black-930 rounded-lg flex flex-col md:grid md:grid-cols-4 lg:grid-cols-8 gap-4 p-6 md:p-18 font-main
   `;
 
   return (
@@ -59,6 +59,7 @@ export default function Work() {
         </div>
         <Artwork setActiveGraphicPhotoList={setActiveGraphicPhotoList}/>
         <h3 className={`md:col-start-1 lg:col-start-3 col-span-2 md:indent-12 text-blorange text-base font-main`}> written work </h3>
+        <h4> this section under construction... </h4>
 
         <h1 className={`md:col-start-1 lg:col-start-3 col-span-2 text-base font-main`}> contact </h1>
         <h3 className={`md:col-start-1 lg:col-start-3 col-span-full md:indent-12 text-blorange text-base font-main`}>
