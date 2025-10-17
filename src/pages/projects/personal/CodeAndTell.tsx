@@ -18,7 +18,7 @@ export default function CodeAndTell() {
           <h1 className='text-[40px]!'> codeAndTell </h1>
         </div>
         <img
-          src="public/codeAndTell.png"
+          src="../codeAndTell.png"
           className={`col-start-5 col-span-3 row-span-2 w-full`}
         />
         <div className={`flex flex-col gap-y-3 col-span-4 col-start-5 row-start-3 text-xs`}>

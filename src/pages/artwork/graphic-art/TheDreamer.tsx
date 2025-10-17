@@ -18,7 +18,7 @@ export default function TheDreamer() {
           <h2 className='text-4xl md:text-5xl'> THE_DREAMER </h2>
         </div>
         <img
-          src="public/the_dreamer.jpeg"
+          src="../the_dreamer.jpeg"
           className={`w-full max-h-full col-start-5 col-span-3 row-span-2`}
         />
         <div className={`flex flex-col gap-y-3 col-span-4 col-start-5 row-start-3 text-xs`}>

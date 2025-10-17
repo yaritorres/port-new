@@ -18,7 +18,7 @@ export default function Atelier() {
           <h1> atelier </h1>
         </div>
         <img
-          src="public/royalepage.gif"
+          src="../royalepage.gif"
           className={`col-start-5 col-span-3 row-span-2 w-full`}
         />
         <div className={`flex flex-col gap-y-3 col-span-4 col-start-5 row-start-3 md:text-lg lg:text-xs`}>

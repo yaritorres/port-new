@@ -24,7 +24,7 @@ export default function ChristmasParty() {
           <h2 className='text-3xl md:text-5xl'> CHRISTMAS_PARTY </h2>
         </div>
         <img
-          src="public/christmas_party.jpeg"
+          src="../christmas_party.jpeg"
           className={`w-full max-h-full col-start-5 col-span-3 row-span-2`}
         />
         <div className={`flex flex-col gap-y-3 col-span-4 col-start-5 row-start-3 text-xs`}>

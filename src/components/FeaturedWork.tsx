@@ -27,7 +27,7 @@ export default function FeaturedWork() {
     `[ react, next.js, vercel, tailwindCSS ]`, `[ react, vite, supabase, tailwindCSS, netlify ]`,
     `[ react, next.js, AWS, CSS ]`, `[ react, next.js, AWS, tailwindCSS, auth0, PostgreSQL ]`
   ]
-  const photoList = ['public/portfolio-v1.png', 'public/codeAndTell.png', 'public/royalepage.gif', 'public/duguid.gif'];
+  const photoList = ['../portfolio-v1.png', '../codeAndTell.png', '../royalepage.gif', '../duguid.gif'];
 
   const mainSectionStyle = `
     w-full min-h-screen md:h-full bg-radial from-black-900 to-black-930 rounded-lg flex flex-col xl:grid grid-cols-8 grid-rows-4 gap-4 p-6 md:p-18

@@ -1,6 +1,6 @@
 export default function RATWARECORP() {
   const mainSectionStyle = `
-    w-full h-full bg-radial from-black-900 to-black-930 rounded-lg flex flex-col gap-y-6 xl:grid grid-cols-8 grid-rows-4 gap-4 p-6 md:p-18 font-main overflow-scroll
+    w-full h-full bg-radial from-black-900 to-black-930 rounded-lg flex flex-col gap-y-6 xl:grid grid-cols-8 grid-rows-4 gap-4 p-6 md:p-18 font-main
   `;
 
   return (
@@ -18,7 +18,7 @@ export default function RATWARECORP() {
           <h2 className='text-4xl md:text-5xl'> RATWARE_CORP </h2>
         </div>
         <img
-          src="public/RATWARE_CORP.jpeg"
+          src="../RATWARE_CORP.jpeg"
           className={`col-start-5 col-span-3 row-span-2 w-full max-h-full`}
         />
         <div className={`flex flex-col gap-y-3 col-span-4 col-start-5 row-start-3 xl:text-xs`}>
