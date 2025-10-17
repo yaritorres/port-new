@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import { useLocation } from "react-router";
 
 export default function LayoutDefault(props: {children: React.ReactNode}) {
-  const [ inView, setInView] = useState(true);
+  const [inView, setInView] = useState(true);
   const url = useLocation();
 
   useEffect(() => {

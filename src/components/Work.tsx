@@ -67,7 +67,6 @@ export default function Work() {
         </h3>
         <Contact />
       </div>
-
     </>
   )
 }

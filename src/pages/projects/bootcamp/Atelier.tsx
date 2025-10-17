@@ -1,5 +1,3 @@
-import SideNav from '../../../custom-ui/SideNav';
-
 export default function Atelier() {
   const mainSectionStyle = `
     w-full h-full bg-radial from-black-900 to-black-930 rounded-lg flex flex-col gap-y-6 lg:grid grid-cols-8 grid-rows-4 gap-4 p-6 md:p-18 font-main
@@ -31,7 +29,6 @@ export default function Atelier() {
           <p> most importantly, we remembered to have fun. </p>
         </div>
       </div>
-      {/* <SideNav /> */}
     </>
   );
 }

@@ -1,6 +1,5 @@
 import Work from '../components/Work';
 import FeaturedWork from '../components/FeaturedWork';
-import SideNav from '../custom-ui/SideNav';
 
 function Index() {
   return (
@@ -11,7 +10,6 @@ function Index() {
         <FeaturedWork />
         <Work />
       </div>
-      {/* <SideNav /> */}
     </>
   );
 }

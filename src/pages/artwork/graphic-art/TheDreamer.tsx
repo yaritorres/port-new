@@ -1,5 +1,3 @@
-import SideNav from '../../../custom-ui/SideNav';
-
 export default function TheDreamer() {
   const mainSectionStyle = `
     w-full h-full bg-radial from-black-900 to-black-930 rounded-lg flex flex-col xl:grid grid-cols-8 grid-rows-4 gap-4 p-6 md:p-18 font-main
@@ -33,7 +31,6 @@ export default function TheDreamer() {
           <p> the barcodes can be scanned to reveal a string of text. </p>
         </div>
       </div>
-      <SideNav />
     </>
   );
 }

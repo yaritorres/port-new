@@ -1,5 +1,3 @@
-import SideNav from '../../../custom-ui/SideNav';
-
 export default function PortfolioVersionOne() {
   const mainSectionStyle = `
     w-full h-full bg-radial from-black-900 to-black-930 rounded-lg flex flex-col gap-y-6 xl:grid grid-cols-8 grid-rows-4 gap-4 p-6 md:p-18 font-main
@@ -30,7 +28,6 @@ export default function PortfolioVersionOne() {
           <p> it has some quirks... hopefully this version doesn&apos;t so much... </p>
         </div>
       </div>
-      {/* <SideNav /> */}
     </>
   );
 }
